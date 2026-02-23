@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaizen MMA | Virginia's Premier Martial Arts Gym — UFC, Bellator, National Champions</title>
+  <meta name="description" content="Virginia's most successful martial arts team since 2004. UFC & Bellator athletes trained. Boxing, Muay Thai, BJJ, MMA, Wrestling & Kids programs. 5 locations across Northern Virginia. Start your free week today.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black:  #080808;
+      --dark:   #111111;
+      --card:   #181818;
+      --card2:  #1e1e1e;
+      --border: #2a2a2a;
+      --red:    #DC1414;
+      --red-l:  #FF2828;
+      --white:  #F8F8F8;
+      --gray:   #888888;
+      --lgray:  #BBBBBB;
+      --display:'Bebas Neue', sans-serif;
+      --cond:   'Barlow Condensed', sans-serif;
+      --body:   'Barlow', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: var(--body); overflow-x: hidden; line-height: 1; }
+    body::after { content:''; position:fixed; inset:0; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E"); pointer-events:none; z-index:9998; }
+    a { text-decoration:none; color:inherit; }
+    button { cursor:pointer; font-family:inherit; }
+
+    /* TOPBAR */
+    .topbar { background:var(--red); padding:9px 20px; text-align:center; font-family:var(--cond); font-size:13px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; position:relative; z-index:1001; }
+    .topbar a { text-decoration:underline; margin-left:10px; opacity:.9; }
+    .topbar a:hover { opacity:1; }
+
+    /* NAV */
+    nav { position:fixed; top:37px; left:0; right:0; z-index:1000; height:70px; display:flex; align-items:center; justify-content:space-between; padding:0 5%; transition:background .3s,backdrop-filter .3s,border-color .3s,top .3s; border-bottom:1px solid transparent; }
+    nav.scrolled { top:0; background:rgba(8,8,8,.94); backdrop-filter:blur(20px); border-bottom-color:var(--border); }
+    .logo { font-family:var(--display); font-size:26px; letter-spacing:4px; color:var(--white); }
+    .logo em { color:var(--red); font-style:normal; }
+    .nav-links { display:flex; align-items:center; gap:28px; list-style:none; }
+    .nav-links a { font-family:var(--cond); font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--lgray); transition:color .2s; }
+    .nav-links a:hover { color:var(--white); }
+    .nav-btn { font-family:var(--cond); font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; background:var(--red); color:var(--white); padding:10px 22px; clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%); transition:background .2s,transform .15s; border:none; display:inline-block; }
+    .nav-btn:hover { background:var(--red-l); transform:translateY(-1px); }
+    .burger { display:none; flex-direction:column; gap:5px; background:none; border:none; padding:4px; }
+    .burger span { display:block; width:24px; height:2px; background:var(--white); transition:all .3s; }
+
+    /* MOBILE MENU */
+    .mob-menu { position:fixed; inset:0; background:rgba(8,8,8,.97); backdrop-filter:blur(24px); z-index:999; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:24px; opacity:0; pointer-events:none; transition:opacity .3s; }
+    .mob-menu.open { opacity:1; pointer-events:all; }
+    .mob-menu a { font-family:var(--display); font-size:40px; letter-spacing:4px; color:var(--white); transition:color .2s; }
+    .mob-menu a:hover { color:var(--red); }
+
+    /* HERO */
+    .hero { position:relative; min-height:100vh; display:flex; align-items:center; padding-top:107px; overflow:hidden; }
+    .hero-bg { position:absolute; inset:0; background:radial-gradient(ellipse 90% 70% at 65% 55%,rgba(220,20,20,.13) 0%,transparent 65%),radial-gradient(ellipse 50% 40% at 15% 85%,rgba(220,20,20,.06) 0%,transparent 60%),var(--black); }
+    .hero-stripes { position:absolute; right:-80px; top:0; bottom:0; width:52%; background:repeating-linear-gradient(-18deg,transparent,transparent 38px,rgba(255,255,255,.018) 38px,rgba(255,255,255,.018) 39px); }
+    .hero-slash { position:absolute; top:0; bottom:0; right:42%; width:3px; background:linear-gradient(to bottom,transparent 5%,var(--red) 25%,var(--red) 75%,transparent 95%); opacity:.5; transform:skewX(-3deg); }
+    .hero-content { position:relative; z-index:10; padding:0 5%; max-width:1300px; width:100%; margin:0 auto; }
+    .eyebrow { display:inline-flex; align-items:center; gap:12px; font-family:var(--cond); font-size:13px; font-weight:700; letter-spacing:5px; text-transform:uppercase; color:var(--red); margin-bottom:18px; }
+    .eyebrow::before { content:''; display:block; width:36px; height:2px; background:var(--red); }
+    .hero-title { font-family:var(--display); font-size:clamp(72px,12vw,160px); line-height:.88; letter-spacing:2px; margin-bottom:24px; }
+    .hero-title span { color:var(--red); display:block; }
+    .hero-sub { font-size:clamp(15px,1.7vw,18px); font-weight:300; color:var(--lgray); max-width:480px; line-height:1.65; margin-bottom:40px; }
+    .hero-btns { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:44px; }
+    .countdown-box { display:inline-flex; align-items:center; gap:14px; background:rgba(220,20,20,.08); border:1px solid rgba(220,20,20,.28); padding:14px 22px; flex-wrap:wrap; }
+    .cd-label { font-family:var(--cond); font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--red); }
+    .cd-timer { display:flex; align-items:center; gap:2px; }
+    .cd-num { font-family:var(--display); font-size:30px; line-height:1; color:var(--white); display:block; min-width:44px; text-align:center; }
+    .cd-sep { font-family:var(--display); font-size:26px; color:var(--red); padding:0 1px; }
+    .cd-lbl { font-size:8px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--gray); display:block; margin-top:2px; text-align:center; }
+    .hero-aside { position:absolute; right:5%; bottom:12%; display:flex; flex-direction:column; gap:28px; z-index:10; }
+    .aside-stat { text-align:right; }
+    .aside-num { font-family:var(--display); font-size:54px; line-height:1; }
+    .aside-num em { color:var(--red); font-style:normal; }
+    .aside-lbl { font-family:var(--cond); font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--gray); }
+    .scroll-hint { position:absolute; bottom:28px; left:50%; transform:translateX(-50%); z-index:10; }
+    .scroll-line { width:1px; height:56px; background:linear-gradient(to bottom,var(--border),transparent); animation:sline 2s ease-in-out infinite; margin:0 auto; }
+    @keyframes sline { 0%{transform:scaleY(0);transform-origin:top} 50%{transform:scaleY(1);transform-origin:top} 51%{transform:scaleY(1);transform-origin:bottom} 100%{transform:scaleY(0);transform-origin:bottom} }
+
+    /* BUTTONS */
+    .btn-p { display:inline-flex; align-items:center; gap:10px; font-family:var(--cond); font-size:15px; font-weight:700; letter-spacing:2px; text-transform:uppercase; background:var(--red); color:var(--white); padding:15px 34px; clip-path:polygon(12px 0,100% 0,calc(100% - 12px) 100%,0 100%); transition:background .2s,transform .2s,box-shadow .2s; border:none; }
+    .btn-p:hover { background:var(--red-l); transform:translateY(-2px); box-shadow:0 14px 40px rgba(220,20,20,.3); }
+    .btn-p .arr { transition:transform .2s; }
+    .btn-p:hover .arr { transform:translateX(4px); }
+    .btn-s { display:inline-flex; align-items:center; gap:10px; font-family:var(--cond); font-size:15px; font-weight:700; letter-spacing:2px; text-transform:uppercase; background:transparent; color:var(--white); padding:14px 34px; border:1px solid var(--border); clip-path:polygon(12px 0,100% 0,calc(100% - 12px) 100%,0 100%); transition:border-color .2s,background .2s; }
+    .btn-s:hover { border-color:rgba(255,255,255,.5); background:rgba(255,255,255,.04); }
+
+    /* TICKER */
+    .ticker { background:var(--dark); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:15px 0; overflow:hidden; }
+    .ticker-track { display:flex; animation:ticker 34s linear infinite; white-space:nowrap; }
+    @keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+    .ticker-item { display:inline-flex; align-items:center; gap:14px; padding:0 36px; font-family:var(--cond); font-size:14px; font-weight:700; letter-spacing:3.5px; text-transform:uppercase; color:var(--lgray); flex-shrink:0; }
+    .t-dot { width:5px; height:5px; border-radius:50%; background:var(--red); flex-shrink:0; }
+
+    /* SECTIONS */
+    .section { padding:100px 5%; }
+    .section-dark { background:var(--dark); }
+    .inner { max-width:1280px; margin:0 auto; }
+    .s-eye { display:inline-flex; align-items:center; gap:10px; font-family:var(--cond); font-size:12px; font-weight:700; letter-spacing:5px; text-transform:uppercase; color:var(--red); margin-bottom:14px; }
+    .s-eye::before { content:''; display:block; width:22px; height:2px; background:var(--red); }
+    .s-title { font-family:var(--display); font-size:clamp(46px,6.5vw,84px); line-height:.92; letter-spacing:1px; margin-bottom:20px; }
+    .s-lead { font-size:17px; font-weight:300; color:var(--lgray); max-width:520px; line-height:1.75; }
+
+    /* ABOUT */
+    .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+    .about-img-wrap { position:relative; }
+    .about-img { width:100%; aspect-ratio:4/5; background:var(--card); position:relative; overflow:hidden; }
+    .about-img::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(220,20,20,.18) 0%,transparent 55%),repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(255,255,255,.04) 60px),repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(255,255,255,.04) 60px); }
+    .about-img-ghost { position:absolute; bottom:0; left:0; right:0; font-family:var(--display); font-size:80px; line-height:.85; color:rgba(255,255,255,.055); padding:24px; user-select:none; }
+    .about-badge { position:absolute; top:-22px; right:-22px; width:108px; height:108px; background:var(--red); border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; box-shadow:0 8px 32px rgba(220,20,20,.4); }
+    .ab-num { font-family:var(--display); font-size:36px; line-height:1; }
+    .ab-lbl { font-family:var(--cond); font-size:9px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:rgba(255,255,255,.8); text-align:center; }
+    .about-text p { font-size:16px; font-weight:300; color:var(--lgray); line-height:1.8; margin-bottom:18px; }
+    .checklist { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:28px 0 36px; }
+    .check-item { display:flex; align-items:center; gap:10px; font-family:var(--cond); font-size:14px; font-weight:700; letter-spacing:1px; text-transform:uppercase; }
+    .check-item::before { content:'✓'; color:var(--red); font-size:14px; }
+
+    /* PROGRAMS */
+    .programs-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:56px; flex-wrap:wrap; gap:20px; }
+    .prog-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+    .prog-card { background:var(--card); border:1px solid var(--border); padding:44px 36px; position:relative; overflow:hidden; transition:background .3s,border-color .3s; }
+    .prog-card::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:var(--red); transform:scaleX(0); transform-origin:left; transition:transform .35s; }
+    .prog-card:hover { background:var(--card2); border-color:rgba(220,20,20,.25); }
+    .prog-card:hover::after { transform:scaleX(1); }
+    .pc-num { position:absolute; top:16px; right:20px; font-family:var(--display); font-size:88px; line-height:1; color:rgba(255,255,255,.04); pointer-events:none; transition:color .3s; }
+    .prog-card:hover .pc-num { color:rgba(220,20,20,.07); }
+    .pc-icon { font-size:34px; margin-bottom:20px; display:block; }
+    .pc-name { font-family:var(--display); font-size:36px; letter-spacing:1px; margin-bottom:12px; }
+    .pc-desc { font-size:15px; font-weight:300; color:var(--gray); line-height:1.7; margin-bottom:24px; }
+    .pc-tag { display:inline-block; font-family:var(--cond); font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--red); border:1px solid rgba(220,20,20,.35); padding:4px 12px; }
+
+    /* STATS */
+    .stats-bar { background:var(--red); padding:72px 5%; }
+    .stats-inner { max-width:1280px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:40px; text-align:center; }
+    .stat-num { font-family:var(--display); font-size:clamp(54px,7vw,82px); line-height:1; color:var(--white); margin-bottom:8px; }
+    .stat-lbl { font-family:var(--cond); font-size:13px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,.7); }
+
+    /* LOCATIONS */
+    .loc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:56px; }
+    .loc-card { background:var(--card); border:1px solid var(--border); padding:36px; transition:border-color .3s,background .3s; position:relative; overflow:hidden; }
+    .loc-card:hover { border-color:rgba(220,20,20,.35); background:var(--card2); }
+    .loc-card::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:var(--red); transform:scaleX(0); transform-origin:left; transition:transform .35s; }
+    .loc-card:hover::after { transform:scaleX(1); }
+    .loc-name { font-family:var(--display); font-size:32px; margin-bottom:16px; }
+    .loc-phone { font-family:var(--cond); font-size:18px; font-weight:700; letter-spacing:1px; color:var(--red); margin-bottom:10px; display:block; }
+    .loc-addr { font-size:14px; font-weight:300; color:var(--gray); line-height:1.6; }
+    .loc-tag { display:inline-block; font-family:var(--cond); font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--lgray); background:var(--dark); border:1px solid var(--border); padding:3px 10px; margin-top:14px; }
+
+    /* COACHES */
+    .coaches-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:60px; }
+    .coach-card { background:var(--card); border:1px solid var(--border); overflow:hidden; transition:transform .3s,border-color .3s; }
+    .coach-card:hover { transform:translateY(-5px); border-color:rgba(220,20,20,.3); }
+    .coach-img { aspect-ratio:3/4; background:var(--dark); position:relative; overflow:hidden; }
+    .coach-img-bg { position:absolute; inset:0; background:linear-gradient(to bottom,transparent 45%,rgba(8,8,8,.97) 100%),repeating-linear-gradient(45deg,transparent,transparent 18px,rgba(255,255,255,.018) 18px,rgba(255,255,255,.018) 19px); }
+    .coach-ghost { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-family:var(--display); font-size:110px; color:rgba(255,255,255,.05); pointer-events:none; user-select:none; }
+    .coach-overlay { position:absolute; bottom:0; left:0; right:0; padding:28px 24px; }
+    .coach-spec { font-family:var(--cond); font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--red); margin-bottom:5px; }
+    .coach-name { font-family:var(--display); font-size:32px; }
+    .coach-body { padding:24px; }
+    .coach-bio { font-size:14px; font-weight:300; color:var(--gray); line-height:1.7; margin-bottom:16px; }
+    .tags { display:flex; flex-wrap:wrap; gap:7px; }
+    .tag { font-family:var(--cond); font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--lgray); background:var(--dark); border:1px solid var(--border); padding:4px 10px; }
+
+    /* TESTIMONIALS */
+    .testi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:60px; }
+    .testi-card { background:var(--card); border:1px solid var(--border); padding:40px; position:relative; }
+    .testi-quote { position:absolute; top:16px; right:24px; font-family:var(--display); font-size:88px; line-height:.8; color:rgba(220,20,20,.15); pointer-events:none; }
+    .stars { color:var(--red); font-size:13px; letter-spacing:3px; margin-bottom:16px; }
+    .testi-text { font-size:15px; font-weight:300; color:var(--lgray); line-height:1.75; margin-bottom:28px; font-style:italic; }
+    .testi-author { display:flex; align-items:center; gap:14px; }
+    .t-avatar { width:44px; height:44px; border-radius:50%; background:var(--red); display:flex; align-items:center; justify-content:center; font-family:var(--display); font-size:22px; flex-shrink:0; }
+    .t-name { font-family:var(--cond); font-size:15px; font-weight:700; letter-spacing:1px; text-transform:uppercase; }
+    .t-since { font-size:13px; color:var(--gray); margin-top:3px; }
+
+    /* SCHEDULE */
+    .sched-tabs { display:flex; border-bottom:1px solid var(--border); margin-top:48px; }
+    .sched-tab { font-family:var(--cond); font-size:14px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gray); padding:14px 28px; border:none; border-bottom:2px solid transparent; background:none; transition:color .2s,border-color .2s; }
+    .sched-tab.on { color:var(--white); border-bottom-color:var(--red); }
+    .sched-grid { display:grid; grid-template-columns:repeat(7,1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin-top:28px; }
+    .sched-head { background:var(--dark); padding:12px 6px; text-align:center; font-family:var(--cond); font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gray); }
+    .sched-col { display:flex; flex-direction:column; gap:1px; background:var(--border); }
+    .sched-slot { background:var(--card); padding:12px 8px; text-align:center; min-height:82px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; }
+    .sched-slot.empty { background:var(--dark); }
+    .ss-time { font-family:var(--cond); font-size:10px; font-weight:700; letter-spacing:1px; color:var(--gray); }
+    .ss-class { font-family:var(--cond); font-size:12px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; }
+    .ss-tag { font-size:9px; font-family:var(--cond); font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:2px 6px; }
+    .beg { background:rgba(34,197,94,.12); color:#22c55e; }
+    .adv { background:rgba(220,20,20,.12); color:var(--red); }
+    .all { background:rgba(255,255,255,.07); color:var(--gray); }
+    .wom { background:rgba(168,85,247,.12); color:#a855f7; }
+
+    /* PRICING */
+    .pricing-urgency { display:inline-flex; align-items:center; gap:10px; background:rgba(220,20,20,.09); border:1px solid rgba(220,20,20,.28); padding:10px 20px; margin-bottom:48px; font-family:var(--cond); font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--red); }
+    .pulse { width:8px; height:8px; border-radius:50%; background:var(--red); animation:pulseA 2s ease-in-out infinite; flex-shrink:0; }
+    @keyframes pulseA { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.6);opacity:.45} }
+    .pricing-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; max-width:1040px; }
+    .price-card { background:var(--card); border:1px solid var(--border); padding:48px 40px; position:relative; overflow:hidden; transition:border-color .3s; }
+    .price-card.feat { background:var(--dark); border-color:var(--red); }
+    .price-card:not(.feat):hover { border-color:rgba(220,20,20,.35); }
+    .feat-badge { position:absolute; top:0; left:50%; transform:translateX(-50%); background:var(--red); font-family:var(--cond); font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--white); padding:5px 20px; white-space:nowrap; }
+    .p-plan { font-family:var(--cond); font-size:12px; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--gray); margin-bottom:16px; }
+    .p-plan-feat { margin-top:18px; }
+    .p-price { display:flex; align-items:flex-start; gap:3px; margin-bottom:6px; }
+    .p-cur { font-family:var(--cond); font-size:22px; font-weight:700; color:var(--lgray); margin-top:10px; }
+    .p-amt { font-family:var(--display); font-size:84px; line-height:1; }
+    .p-per { font-size:14px; color:var(--gray); align-self:flex-end; margin-bottom:10px; }
+    .p-desc { font-size:14px; color:var(--gray); line-height:1.5; margin-bottom:8px; }
+    .p-div { height:1px; background:var(--border); margin:22px 0; }
+    .p-feats { list-style:none; margin-bottom:30px; }
+    .p-feats li { display:flex; align-items:flex-start; gap:10px; font-size:14px; color:var(--lgray); padding:9px 0; border-bottom:1px solid rgba(255,255,255,.04); line-height:1.4; }
+    .p-feats li::before { content:'→'; color:var(--red); font-size:13px; flex-shrink:0; margin-top:1px; }
+    .p-feats li.off { color:var(--border); }
+    .p-feats li.off::before { content:'—'; color:var(--border); }
+    .spots { display:flex; align-items:center; gap:6px; font-family:var(--cond); font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#f59e0b; margin-top:14px; }
+    .p-btn-full { width:100%; display:flex; align-items:center; justify-content:center; text-align:center; }
+
+    /* KIDS SECTION */
+    .kids-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; margin-top:56px; }
+    .kids-card { background:var(--card); border:1px solid var(--border); padding:44px; position:relative; overflow:hidden; transition:border-color .3s,background .3s; }
+    .kids-card:hover { border-color:rgba(220,20,20,.3); background:var(--card2); }
+    .kids-card::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:var(--red); transform:scaleX(0); transform-origin:left; transition:transform .35s; }
+    .kids-card:hover::after { transform:scaleX(1); }
+    .kc-age { display:inline-block; font-family:var(--cond); font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--red); border:1px solid rgba(220,20,20,.35); padding:4px 12px; margin-bottom:16px; }
+    .kc-name { font-family:var(--display); font-size:44px; margin-bottom:16px; }
+    .kc-desc { font-size:15px; font-weight:300; color:var(--lgray); line-height:1.7; }
+    .kc-perks { display:flex; flex-wrap:wrap; gap:8px; margin-top:20px; }
+    .kc-perk { font-family:var(--cond); font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--lgray); background:var(--dark); border:1px solid var(--border); padding:5px 12px; }
+
+    /* CTA */
+    .cta-section { background:var(--black); padding:120px 5%; text-align:center; position:relative; overflow:hidden; }
+    .cta-section::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 90% 60% at 50% 50%,rgba(220,20,20,.09) 0%,transparent 65%); }
+    .cta-ghost { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-family:var(--display); font-size:clamp(80px,18vw,260px); color:rgba(255,255,255,.02); white-space:nowrap; pointer-events:none; user-select:none; }
+    .cta-section > * { position:relative; z-index:1; }
+    .cta-section .s-eye { justify-content:center; }
+    .cta-section .s-lead { max-width:520px; margin:0 auto 40px; }
+
+    /* FORM */
+    .lead-form { max-width:480px; margin:40px auto; background:var(--card); border:1px solid var(--border); padding:40px; }
+    .form-label { font-family:var(--cond); font-size:12px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--red); margin-bottom:20px; display:block; }
+    .form-fields { display:flex; flex-direction:column; gap:11px; }
+    .form-fields input, .form-fields select { background:var(--dark); border:1px solid var(--border); color:var(--white); padding:14px 18px; font-family:var(--body); font-size:15px; outline:none; transition:border-color .2s; width:100%; appearance:none; -webkit-appearance:none; }
+    .form-fields input::placeholder { color:var(--gray); }
+    .form-fields input:focus, .form-fields select:focus { border-color:var(--red); }
+    .form-fields select option { background:var(--dark); color:var(--white); }
+    .form-submit { width:100%; background:var(--red); color:var(--white); border:none; padding:17px; font-family:var(--cond); font-size:16px; font-weight:700; letter-spacing:2px; text-transform:uppercase; transition:background .2s,transform .15s; clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%); margin-top:4px; }
+    .form-submit:hover { background:var(--red-l); transform:translateY(-1px); }
+    .form-note { font-size:12px; color:var(--gray); text-align:center; margin-top:14px; }
+    .trust-row { display:flex; align-items:center; justify-content:center; gap:28px; flex-wrap:wrap; margin-top:32px; }
+    .trust-item { display:flex; align-items:center; gap:7px; font-family:var(--cond); font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--gray); }
+    .trust-item::before { content:'✓'; color:var(--red); }
+
+    /* FOOTER */
+    footer { background:var(--dark); border-top:1px solid var(--border); padding:64px 5% 32px; }
+    .foot-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:48px; max-width:1280px; margin:0 auto; padding-bottom:48px; border-bottom:1px solid var(--border); }
+    .foot-brand .logo { font-size:30px; display:inline-block; margin-bottom:16px; }
+    .foot-brand p { font-size:14px; font-weight:300; color:var(--gray); line-height:1.7; max-width:280px; margin-bottom:24px; }
+    .socials { display:flex; gap:10px; }
+    .soc-btn { width:38px; height:38px; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; font-family:var(--cond); color:var(--lgray); transition:border-color .2s,background .2s,color .2s; letter-spacing:1px; }
+    .soc-btn:hover { border-color:var(--red); background:rgba(220,20,20,.1); color:var(--white); }
+    .foot-col h4 { font-family:var(--cond); font-size:12px; font-weight:700; letter-spacing:4px; text-transform:uppercase; margin-bottom:20px; }
+    .foot-col ul { list-style:none; display:flex; flex-direction:column; gap:11px; }
+    .foot-col a { font-size:14px; color:var(--gray); transition:color .2s; }
+    .foot-col a:hover { color:var(--white); }
+    .contact-item { display:flex; align-items:flex-start; gap:10px; font-size:14px; color:var(--gray); margin-bottom:12px; line-height:1.5; }
+    .c-icon { color:var(--red); flex-shrink:0; }
+    .foot-bottom { max-width:1280px; margin:28px auto 0; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px; }
+    .foot-bottom p { font-size:13px; color:var(--gray); }
+    .foot-links { display:flex; gap:20px; }
+    .foot-links a { font-size:13px; color:var(--gray); transition:color .2s; }
+    .foot-links a:hover { color:var(--white); }
+
+    /* SCROLL REVEAL */
+    .r { opacity:0; transform:translateY(28px); transition:opacity .7s ease,transform .7s ease; }
+    .r.in { opacity:1; transform:translateY(0); }
+    .r.d1 { transition-delay:.1s; }
+    .r.d2 { transition-delay:.2s; }
+    .r.d3 { transition-delay:.3s; }
+    .r.d4 { transition-delay:.4s; }
+
+    /* RESPONSIVE */
+    @media (max-width:1100px) {
+      .about-grid { grid-template-columns:1fr; gap:48px; }
+      .about-img { aspect-ratio:16/9; }
+      .prog-grid { grid-template-columns:repeat(2,1fr); }
+      .coaches-grid { grid-template-columns:repeat(2,1fr); }
+      .testi-grid { grid-template-columns:1fr 1fr; }
+      .stats-inner { grid-template-columns:repeat(2,1fr); }
+      .loc-grid { grid-template-columns:repeat(2,1fr); }
+      .foot-grid { grid-template-columns:1fr 1fr; }
+      .hero-aside { display:none; }
+      .pricing-grid { grid-template-columns:1fr; max-width:420px; }
+    }
+    @media (max-width:768px) {
+      .section { padding:64px 5%; }
+      .nav-links, .nav-btn { display:none; }
+      .burger { display:flex; }
+      .prog-grid, .coaches-grid, .testi-grid, .loc-grid, .kids-grid { grid-template-columns:1fr; }
+      .sched-grid { grid-template-columns:repeat(4,1fr); }
+      .hero-btns .btn-s { display:none; }
+      .checklist { grid-template-columns:1fr; }
+    }
+    @media (max-width:520px) {
+      .sched-grid { grid-template-columns:repeat(3,1fr); }
+      .stats-inner { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="topbar">
+    🥊 FREE WEEK TRIAL — 5 LOCATIONS ACROSS NORTHERN VIRGINIA
+    <a href="#cta">CLAIM NOW →</a>
+  </div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="#home" class="logo">KAIZEN<em>.</em>MMA</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#programs">Programs</a></li>
+      <li><a href="#locations">Locations</a></li>
+      <li><a href="#coaches">Coaches</a></li>
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#kids">Kids</a></li>
+    </ul>
+    <a href="#cta" class="nav-btn">Free Week Trial</a>
+    <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mob-menu" id="mobMenu">
+    <a href="#about"     onclick="closeMenu()">About</a>
+    <a href="#programs"  onclick="closeMenu()">Programs</a>
+    <a href="#locations" onclick="closeMenu()">Locations</a>
+    <a href="#coaches"   onclick="closeMenu()">Coaches</a>
+    <a href="#schedule"  onclick="closeMenu()">Schedule</a>
+    <a href="#kids"      onclick="closeMenu()">Kids</a>
+    <a href="#cta"       onclick="closeMenu()">Free Week</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-stripes"></div>
+    <div class="hero-slash"></div>
+    <div class="hero-content">
+      <div class="eyebrow">Northern Virginia's Premier Martial Arts Team · Est. 2004</div>
+      <h1 class="hero-title">
+        25 YEARS
+        <span>PROVEN</span>
+        SUCCESS.
+      </h1>
+      <p class="hero-sub">UFC. Bellator. One Championship. National champions across BJJ, Wrestling, Muay Thai, Boxing, and MMA. We don't just train athletes — we build them from the ground up. All levels welcome.</p>
+      <div class="hero-btns">
+        <a href="#cta" class="btn-p">Claim Free Week <span class="arr">→</span></a>
+        <a href="#programs" class="btn-s">View Programs</a>
+      </div>
+      <div class="countdown-box">
+        <span class="cd-label">⚡ Free Week Ends In:</span>
+        <div class="cd-timer">
+          <div><span class="cd-num" id="cd-d">03</span><span class="cd-lbl">Days</span></div>
+          <span class="cd-sep">:</span>
+          <div><span class="cd-num" id="cd-h">14</span><span class="cd-lbl">Hrs</span></div>
+          <span class="cd-sep">:</span>
+          <div><span class="cd-num" id="cd-m">32</span><span class="cd-lbl">Min</span></div>
+          <span class="cd-sep">:</span>
+          <div><span class="cd-num" id="cd-s">00</span><span class="cd-lbl">Sec</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-aside">
+      <div class="aside-stat"><div class="aside-num">500<em>+</em></div><div class="aside-lbl">Active Members</div></div>
+      <div class="aside-stat"><div class="aside-num">25<em>+</em></div><div class="aside-lbl">Years Training</div></div>
+      <div class="aside-stat"><div class="aside-num">5</div><div class="aside-lbl">VA Locations</div></div>
+    </div>
+    <div class="scroll-hint"><div class="scroll-line"></div></div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-track" id="ticker">
+      <div class="ticker-item"><span class="t-dot"></span>Boxing</div>
+      <div class="ticker-item"><span class="t-dot"></span>Muay Thai</div>
+      <div class="ticker-item"><span class="t-dot"></span>Brazilian Jiu-Jitsu</div>
+      <div class="ticker-item"><span class="t-dot"></span>MMA</div>
+      <div class="ticker-item"><span class="t-dot"></span>Wrestling</div>
+      <div class="ticker-item"><span class="t-dot"></span>Kids Programs</div>
+      <div class="ticker-item"><span class="t-dot"></span>After-School Pickup</div>
+      <div class="ticker-item"><span class="t-dot"></span>UFC Athletes Trained</div>
+      <div class="ticker-item"><span class="t-dot"></span>Women's Classes</div>
+      <div class="ticker-item"><span class="t-dot"></span>Fight Team</div>
+      <div class="ticker-item"><span class="t-dot"></span>Summer Camp</div>
+      <div class="ticker-item"><span class="t-dot"></span>Private Lessons</div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="section section-dark" id="about">
+    <div class="inner">
+      <div class="about-grid">
+        <div class="about-img-wrap r">
+          <div class="about-img">
+            <div class="about-img-ghost">KAIZEN<br>MMA</div>
+          </div>
+          <div class="about-badge">
+            <span class="ab-num">25</span>
+            <span class="ab-lbl">Years<br>Strong</span>
+          </div>
+        </div>
+        <div class="about-text">
+          <div class="s-eye r">Our Philosophy</div>
+          <h2 class="s-title r d1">CONTINUOUS<br>IMPROVEMENT.</h2>
+          <p class="r d2">"Kaizen" is a Japanese concept meaning continuous improvement — the belief that small, consistent changes lead to extraordinary results. It's been our guiding philosophy since we opened our first gym in 2004.</p>
+          <p class="r d2">Since then, we've grown to 5 locations across Northern Virginia and become the most successful martial arts team in the region. We've produced athletes who've competed in the UFC, Bellator, and One Championship, as well as national and international champions across every discipline.</p>
+          <p class="r d2">Whether you're stepping onto the mat for the first time or preparing for your next professional fight — Kaizen MMA is your home.</p>
+          <div class="checklist r d3">
+            <div class="check-item">All Skill Levels</div>
+            <div class="check-item">UFC-Trained Coaches</div>
+            <div class="check-item">5 VA Locations</div>
+            <div class="check-item">Pro Fight Team</div>
+            <div class="check-item">Kids Programs</div>
+            <div class="check-item">After-School Pickup</div>
+            <div class="check-item">Women's Classes</div>
+            <div class="check-item">Summer Camp</div>
+          </div>
+          <a href="#cta" class="btn-p r d4">Start Your Free Week <span class="arr">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section class="section" id="programs">
+    <div class="inner">
+      <div class="programs-header">
+        <div>
+          <div class="s-eye r">What We Offer</div>
+          <h2 class="s-title r d1">OUR<br>PROGRAMS</h2>
+        </div>
+        <p class="s-lead r d2" style="max-width:360px;">From your first class to your first fight — elite programs for every goal and every level.</p>
+      </div>
+      <div class="prog-grid">
+        <div class="prog-card r">
+          <span class="pc-num">01</span>
+          <span class="pc-icon">🥊</span>
+          <div class="pc-name">BOXING</div>
+          <p class="pc-desc">Pure striking mastery. Jabs, hooks, crosses, uppercuts, footwork, and head movement. Coach Gustavo Abel has trained multiple Golden Gloves champions. Beginners and competitors welcome.</p>
+          <span class="pc-tag">All Levels</span>
+        </div>
+        <div class="prog-card r d1">
+          <span class="pc-num">02</span>
+          <span class="pc-icon">🦵</span>
+          <div class="pc-name">MUAY THAI</div>
+          <p class="pc-desc">The Art of Eight Limbs. Punches, kicks, elbows, and knees. Taught by ONE Championship veterans and national champions including Moises Ilogon. Dynamic, effective, and fun.</p>
+          <span class="pc-tag">All Levels</span>
+        </div>
+        <div class="prog-card r d2">
+          <span class="pc-num">03</span>
+          <span class="pc-icon">🤼</span>
+          <div class="pc-name">BJJ</div>
+          <p class="pc-desc">Ground control and submissions. Led by 3rd Degree Black Belt Josh Aguero. Dominate with leverage, not size. Both gi and no-gi classes available throughout the week.</p>
+          <span class="pc-tag">All Levels</span>
+        </div>
+        <div class="prog-card r d1">
+          <span class="pc-num">04</span>
+          <span class="pc-icon">⚡</span>
+          <div class="pc-name">MMA</div>
+          <p class="pc-desc">The complete combat system. Blend boxing, Muay Thai, BJJ, and wrestling into one lethal skill set. Coached by founder Nima Mazhari — trainer of UFC and Bellator athletes.</p>
+          <span class="pc-tag">All Levels</span>
+        </div>
+        <div class="prog-card r d2">
+          <span class="pc-num">05</span>
+          <span class="pc-icon">🏋️</span>
+          <div class="pc-name">WRESTLING</div>
+          <p class="pc-desc">Folkstyle, freestyle, and Greco-Roman. Coach Musa Momeni's program has produced Fargo National Champions, USA National Team members, and multiple D1 college wrestlers.</p>
+          <span class="pc-tag">All Levels</span>
+        </div>
+        <div class="prog-card r d3">
+          <span class="pc-num">06</span>
+          <span class="pc-icon">👦</span>
+          <div class="pc-name">KIDS MMA</div>
+          <p class="pc-desc">Little Lions (ages 4–7) and Young Lions (ages 7–13). Real self-defense, anti-bullying skills, confidence, and discipline. After-school pickup available Mon–Fri at select locations.</p>
+          <span class="pc-tag">Ages 4–13</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="r"><div class="stat-num" data-to="500">0</div><div class="stat-lbl">Active Members</div></div>
+      <div class="r d1"><div class="stat-num" data-to="25">0</div><div class="stat-lbl">Years of Excellence</div></div>
+      <div class="r d2"><div class="stat-num" data-to="5">0</div><div class="stat-lbl">Virginia Locations</div></div>
+      <div class="r d3"><div class="stat-num" data-to="30">0</div><div class="stat-lbl">Championship Titles</div></div>
+    </div>
+  </div>
+
+  <!-- LOCATIONS -->
+  <section class="section section-dark" id="locations">
+    <div class="inner">
+      <div class="s-eye r">Find Us</div>
+      <h2 class="s-title r d1">5 LOCATIONS<br>ACROSS VIRGINIA</h2>
+      <p class="s-lead r d2">Free trial classes available at every location. Call ahead or just walk in — we'll take care of you.</p>
+      <div class="loc-grid">
+        <div class="loc-card r">
+          <div class="loc-name">FALLS CHURCH</div>
+          <a href="tel:+17037345425" class="loc-phone">(703) 734-5425</a>
+          <div class="loc-addr">2190-K Pimmit Dr<br>Falls Church, VA 22043</div>
+          <span class="loc-tag">Flagship Location</span>
+        </div>
+        <div class="loc-card r d1">
+          <div class="loc-name">FAIRFAX</div>
+          <a href="tel:+17034265425" class="loc-phone">(703) 426-5425</a>
+          <div class="loc-addr">3950 University Dr #103<br>Fairfax, VA 22030</div>
+          <span class="loc-tag">After-School Available</span>
+        </div>
+        <div class="loc-card r d2">
+          <div class="loc-name">VIENNA</div>
+          <a href="tel:+17032815425" class="loc-phone">(703) 281-5425</a>
+          <div class="loc-addr">124 Branch Rd SE<br>Vienna, VA 22180</div>
+          <span class="loc-tag">After-School Available</span>
+        </div>
+        <div class="loc-card r d1">
+          <div class="loc-name">ASHBURN</div>
+          <a href="tel:+17034445425" class="loc-phone">(703) 444-5425</a>
+          <div class="loc-addr">21770 Beaumeade Circle, Ste 125<br>Ashburn, VA 20147</div>
+          <span class="loc-tag">Kids &amp; Adults</span>
+        </div>
+        <div class="loc-card r d2">
+          <div class="loc-name">PURCELLVILLE</div>
+          <a href="tel:+12029755425" class="loc-phone">(202) 975-5425</a>
+          <div class="loc-addr">109 E Main St<br>Purcellville, VA 20132</div>
+          <span class="loc-tag">After-School Available</span>
+        </div>
+        <div class="loc-card r d3" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border-color:rgba(220,20,20,.3);">
+          <div style="font-family:var(--display);font-size:28px;line-height:1.1;margin-bottom:12px;">FREE CLASS<br>AT ANY LOCATION</div>
+          <p style="font-size:14px;color:var(--gray);line-height:1.6;margin-bottom:24px;">No experience needed. All ages welcome. Just show up or book online.</p>
+          <a href="#cta" class="btn-p">Book Free Trial <span class="arr">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COACHES -->
+  <section class="section" id="coaches">
+    <div class="inner">
+      <div class="s-eye r">The Coaches</div>
+      <h2 class="s-title r d1">WORLD-CLASS<br>INSTRUCTORS</h2>
+      <p class="s-lead r d2">Our coaches have competed and won at the highest levels. Their experience is your competitive edge.</p>
+      <div class="coaches-grid">
+        <div class="coach-card r">
+          <div class="coach-img">
+            <div class="coach-img-bg"></div>
+            <div class="coach-ghost">NM</div>
+            <div class="coach-overlay">
+              <div class="coach-spec">Founder &amp; Head Coach</div>
+              <div class="coach-name">NIMA MAZHARI</div>
+            </div>
+          </div>
+          <div class="coach-body">
+            <p class="coach-bio">Founder of Kaizen MMA with 25+ years in combat sports. Has trained numerous UFC and Bellator athletes and world champions across multiple disciplines. The visionary behind every Kaizen location and its pro fight team.</p>
+            <div class="tags"><span class="tag">MMA</span><span class="tag">Muay Thai</span><span class="tag">UFC Coach</span><span class="tag">Founder</span></div>
+          </div>
+        </div>
+        <div class="coach-card r d1">
+          <div class="coach-img">
+            <div class="coach-img-bg"></div>
+            <div class="coach-ghost">GA</div>
+            <div class="coach-overlay">
+              <div class="coach-spec">Boxing Coach · Falls Church</div>
+              <div class="coach-name">GUSTAVO ABEL</div>
+            </div>
+          </div>
+          <div class="coach-body">
+            <p class="coach-bio">Over 20 years coaching professional and amateur boxers. Trainer to multiple Golden Gloves champions and nationally ranked fighters. His technical approach to boxing is unmatched in the DMV region.</p>
+            <div class="tags"><span class="tag">Boxing</span><span class="tag">Golden Gloves</span><span class="tag">20 Yrs</span><span class="tag">Pro Coach</span></div>
+          </div>
+        </div>
+        <div class="coach-card r d2">
+          <div class="coach-img">
+            <div class="coach-img-bg"></div>
+            <div class="coach-ghost">JA</div>
+            <div class="coach-overlay">
+              <div class="coach-spec">BJJ · Grappling Coach</div>
+              <div class="coach-name">JOSH AGUERO</div>
+            </div>
+          </div>
+          <div class="coach-body">
+            <p class="coach-bio">3rd Degree BJJ Black Belt and submission grappling specialist. Competing and coaching at the highest levels for over a decade. Josh's ground game will fundamentally change how you fight.</p>
+            <div class="tags"><span class="tag">BJJ Black Belt</span><span class="tag">3rd Degree</span><span class="tag">No-Gi</span><span class="tag">Grappling</span></div>
+          </div>
+        </div>
+        <div class="coach-card r">
+          <div class="coach-img">
+            <div class="coach-img-bg"></div>
+            <div class="coach-ghost">MI</div>
+            <div class="coach-overlay">
+              <div class="coach-spec">Muay Thai Coach</div>
+              <div class="coach-name">MOISES ILOGON</div>
+            </div>
+          </div>
+          <div class="coach-body">
+            <p class="coach-bio">ONE Championship veteran and Philippine National Muay Thai Champion. Moises brings true elite-level striking knowledge to every session, from first-timers to professional competitors.</p>
+            <div class="tags"><span class="tag">Muay Thai</span><span class="tag">ONE Championship</span><span class="tag">PH National Champ</span></div>
+          </div>
+        </div>
+        <div class="coach-card r d1">
+          <div class="coach-img">
+            <div class="coach-img-bg"></div>
+            <div class="coach-ghost">MM</div>
+            <div class="coach-overlay">
+              <div class="coach-spec">Wrestling Coach · Falls Church</div>
+              <div class="coach-name">MUSA MOMENI</div>
+            </div>
+          </div>
+          <div class="coach-body">
+            <p class="coach-bio">Olympic-level wrestling coach from an acclaimed Iranian Olympic coaching family. His program has produced Fargo National Champions, USA National Team members, and multiple D1 college wrestlers.</p>
+            <div class="tags"><span class="tag">Wrestling</span><span class="tag">Olympic Coach</span><span class="tag">Freestyle</span><span class="tag">Fargo Champs</span></div>
+          </div>
+        </div>
+        <div class="coach-card r d2">
+          <div class="coach-img">
+            <div class="coach-img-bg"></div>
+            <div class="coach-ghost">EB</div>
+            <div class="coach-overlay">
+              <div class="coach-spec">Manager · Kids Head Instructor</div>
+              <div class="coach-name">EDUARDO BRITO</div>
+            </div>
+          </div>
+          <div class="coach-body">
+            <p class="coach-bio">20 years of experience with an undefeated professional MMA record. Eduardo runs the Falls Church kids program, shaping the next generation of Kaizen champions with discipline, passion, and precision.</p>
+            <div class="tags"><span class="tag">MMA</span><span class="tag">Kids Coach</span><span class="tag">Undefeated Pro</span><span class="tag">20 Yrs</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section section-dark">
+    <div class="inner">
+      <div class="s-eye r">Real Members</div>
+      <h2 class="s-title r d1">RESULTS<br>SPEAK LOUDEST</h2>
+      <div class="testi-grid">
+        <div class="testi-card r">
+          <div class="testi-quote">"</div>
+          <div class="stars">★★★★★</div>
+          <p class="testi-text">"I've been training at Kaizen MMA for 8 years since I was a teenager. I went from an amateur to a professional fighter with 22 MMA fights. They are the premium mixed martial arts gym out of the DMV."</p>
+          <div class="testi-author">
+            <div class="t-avatar">S</div>
+            <div>
+              <div class="t-name">Sam K.</div>
+              <div class="t-since">Member since 2016 · 22 Pro MMA Fights · FURY FC Champion</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card r d1">
+          <div class="testi-quote">"</div>
+          <div class="stars">★★★★★</div>
+          <p class="testi-text">"If you're a girl or anyone looking for a welcoming environment with fantastic coaches who will take time to work with you — this is the place. Kaizen has become a second home to me and my girlfriends. This place has truly changed my life."</p>
+          <div class="testi-author">
+            <div class="t-avatar">L</div>
+            <div>
+              <div class="t-name">Lauren B.</div>
+              <div class="t-since">Member since 2023 · Muay Thai &amp; MMA</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card r d2">
+          <div class="testi-quote">"</div>
+          <div class="stars">★★★★★</div>
+          <p class="testi-text">"Kaizen MMA at Falls Church has by far been one of the best gyms I've trained at. It's a big spacious facility and the instructors go way above the call of duty. You'll go from a dull butter knife to a full-fledged katana in a short time."</p>
+          <div class="testi-author">
+            <div class="t-avatar">T</div>
+            <div>
+              <div class="t-name">Tomas H.</div>
+              <div class="t-since">Member · MMA &amp; BJJ</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card r">
+          <div class="testi-quote">"</div>
+          <div class="stars">★★★★★</div>
+          <p class="testi-text">"The best MMA and boxing gym in the DMV. I have been in this gym for more than 2 years and I have improved more than I thought. A gym for any level — pro and amateur alike."</p>
+          <div class="testi-author">
+            <div class="t-avatar">S</div>
+            <div>
+              <div class="t-name">Sport King</div>
+              <div class="t-since">Member · Falls Church</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card r d1">
+          <div class="testi-quote">"</div>
+          <div class="stars">★★★★★</div>
+          <p class="testi-text">"Highly recommend Kaizen MMA. The instructors are extremely professional and experienced, and they truly care about their students. Safety is clearly a top priority, especially for kids — gives parents great peace of mind."</p>
+          <div class="testi-author">
+            <div class="t-avatar">A</div>
+            <div>
+              <div class="t-name">Allen A.</div>
+              <div class="t-since">Parent · Kids Program</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card r d2">
+          <div class="testi-quote">"</div>
+          <div class="stars">★★★★★</div>
+          <p class="testi-text">"Nothing but positive energy at Kaizen MMA. Everyone is welcoming and kind. Training is top-notch across MMA, Boxing, Wrestling, BJJ, Muay Thai, and Kickboxing. I'm glad my son is part of it."</p>
+          <div class="testi-author">
+            <div class="t-avatar">A</div>
+            <div>
+              <div class="t-name">A.G.</div>
+              <div class="t-since">Parent · Kids &amp; Adults Programs</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section class="section" id="schedule">
+    <div class="inner">
+      <div class="s-eye r">Falls Church — Flagship</div>
+      <h2 class="s-title r d1">CLASS<br>SCHEDULE</h2>
+      <p class="s-lead r d2">Schedules vary by location. Call your nearest gym for the full weekly timetable.</p>
+      <div class="sched-tabs">
+        <button class="sched-tab on" onclick="switchTab(this,'adults')">Adults</button>
+        <button class="sched-tab"    onclick="switchTab(this,'kids')">Kids</button>
+      </div>
+
+      <div id="tab-adults">
+        <div class="sched-grid">
+          <div class="sched-head">MON</div><div class="sched-head">TUE</div><div class="sched-head">WED</div><div class="sched-head">THU</div><div class="sched-head">FRI</div><div class="sched-head">SAT</div><div class="sched-head">SUN</div>
+          <div class="sched-col">
+            <div class="sched-slot"><span class="ss-time">6:00 PM</span><span class="ss-class">Muay Thai</span><span class="ss-tag all">All Levels</span></div>
+            <div class="sched-slot"><span class="ss-time">7:00 PM</span><span class="ss-class">BJJ</span><span class="ss-tag all">All Levels</span></div>
+            <div class="sched-slot"><span class="ss-time">8:00 PM</span><span class="ss-class">Boxing FC</span><span class="ss-tag all">All Levels</span></div>
+          </div>
+          <div class="sched-col">
+            <div class="sched-slot"><span class="ss-time">11:00 AM</span><span class="ss-class">Fight Team</span><span class="ss-tag adv">Elite</span></div>
+            <div class="sched-slot"><span class="ss-time">7:00 PM</span><span class="ss-class">Wrestling</span><span class="ss-tag adv">Advanced</span></div>
+            <div class="sched-slot"><span class="ss-time">7:50 PM</span><span class="ss-class">MMA</span><span class="ss-tag adv">Advanced</span></div>
+          </div>
+          <div class="sched-col">
+            <div class="sched-slot"><span class="ss-time">11:00 AM</span><span class="ss-class">Fight Team</span><span class="ss-tag adv">Elite</span></div>
+            <div class="sched-slot"><span class="ss-time">6:00 PM</span><span class="ss-class">Muay Thai</span><span class="ss-tag all">All Levels</span></div>
+            <div class="sched-slot"><span class="ss-time">7:00 PM</span><span class="ss-class">BJJ</span><span class="ss-tag all">All Levels</span></div>
+          </div>
+          <div class="sched-col">
+            <div class="sched-slot"><span class="ss-time">11:00 AM</span><span class="ss-class">Fight Team</span><span class="ss-tag adv">Elite</span></div>
+            <div class="sched-slot"><span class="ss-time">6:00 PM</span><span class="ss-class">Women Only</span><span class="ss-tag wom">Women</span></div>
+            <div class="sched-slot"><span class="ss-time">7:50 PM</span><span class="ss-class">MMA</span><span class="ss-tag adv">Advanced</span></div>
+          </div>
+          <div class="sched-col">
+            <div class="sched-slot"><span class="ss-time">11:00 AM</span><span class="ss-class">Fight Team</span><span class="ss-tag adv">Elite</span></div>
+            <div class="sched-slot empty"></div>
+            <div class="sched-slot empty"></div>
+          </div>
+          <div class="sched-col">
+            <div class="sched-slot"><span class="ss-time">11:00 AM</span><span class="ss-class">KB Fight Team</span><span class="ss-tag adv">Elite</span></div>
+            <div class="sched-slot"><span class="ss-time">2:00 PM</span><span class="ss-class">BJJ</span><span class="ss-tag all">All Levels</span></div>
+            <div class="sched-slot"><span class="ss-time">3:15 PM</span><span class="ss-class">Muay Thai</span><span class="ss-tag all">All Levels</span></div>
+          </div>
+          <div class="sched-col">
+            <div class="sched-slot"><span class="ss-time">11:00 AM</span><span class="ss-class">Fight Team</span><span class="ss-tag adv">Sparring</span></div>
+            <div class="sched-slot empty"></div>
+            <div class="sched-slot empty"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-kids" style="display:none">
+        <div class="sched-grid">
+          <div class="sched-head">MON</div><div class="sched-head">TUE</div><div class="sched-head">WED</div><div class="sched-head">THU</div><div class="sched-head">FRI</div><div class="sched-head">SAT</div><div class="sched-head">SUN</div>
+          <div class="sched-col">
+            <div class="sched-slot"><span class="ss-time">3:00 PM</span><span class="ss-class">After School</span><span class="ss-tag beg">Ages 5–13</span></div>
+            <div class="sched-slot"><span class="ss-time">6:00 PM</span><span class="ss-class">Little Lions</span><span class="ss-tag beg">Ages 4–7</span></div>
+            <div class="sched-slot"><span class="ss-time">6:50 PM</span><span class="ss-class">Young Lions</span><span class="ss-tag all">Ages 7–13</span></div>
+          </div>
+          <div class="sched-col">
+            <div class="sched-slot"><span class="ss-time">3:00 PM</span><span class="ss-class">After School</span><span class="ss-tag beg">Ages 5–13</span></div>
+            <div class="sched-slot"><span class="ss-time">6:00 PM</span><span class="ss-class">Little Lions Adv</span><span class="ss-tag adv">Advanced</span></div>
+            <div class="sched-slot"><span class="ss-time">6:50 PM</span><span class="ss-class">Young Lions Adv</span><span class="ss-tag adv">Advanced</span></div>
+          </div>
+          <div class="sched-col">
+            <div class="sched-slot"><span class="ss-time">3:00 PM</span><span class="ss-class">After School</span><span class="ss-tag beg">Ages 5–13</span></div>
+            <div class="sched-slot"><span class="ss-time">6:00 PM</span><span class="ss-class">Little Lions</span><span class="ss-tag beg">Ages 4–7</span></div>
+            <div class="sched-slot"><span class="ss-time">6:50 PM</span><span class="ss-class">Young Lions</span><span class="ss-tag all">Ages 7–13</span></div>
+          </div>
+          <div class="sched-col">
+            <div class="sched-slot"><span class="ss-time">3:00 PM</span><span class="ss-class">After School</span><span class="ss-tag beg">Ages 5–13</span></div>
+            <div class="sched-slot"><span class="ss-time">6:00 PM</span><span class="ss-class">Little Lions Adv</span><span class="ss-tag adv">Advanced</span></div>
+            <div class="sched-slot"><span class="ss-time">6:50 PM</span><span class="ss-class">Young Lions Adv</span><span class="ss-tag adv">Advanced</span></div>
+          </div>
+          <div class="sched-col">
+            <div class="sched-slot"><span class="ss-time">3:00 PM</span><span class="ss-class">After School</span><span class="ss-tag beg">Ages 5–13</span></div>
+            <div class="sched-slot empty"></div>
+            <div class="sched-slot empty"></div>
+          </div>
+          <div class="sched-col">
+            <div class="sched-slot"><span class="ss-time">11:00 AM</span><span class="ss-class">Little Lions</span><span class="ss-tag beg">Ages 4–7</span></div>
+            <div class="sched-slot"><span class="ss-time">11:50 AM</span><span class="ss-class">Young Lions</span><span class="ss-tag all">Ages 7–13</span></div>
+            <div class="sched-slot"><span class="ss-time">12:40 PM</span><span class="ss-class">Belt Prep</span><span class="ss-tag adv">Advanced</span></div>
+          </div>
+          <div class="sched-col">
+            <div class="sched-slot empty"></div>
+            <div class="sched-slot empty"></div>
+            <div class="sched-slot empty"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KIDS -->
+  <section class="section section-dark" id="kids">
+    <div class="inner">
+      <div class="s-eye r">For the Next Generation</div>
+      <h2 class="s-title r d1">KIDS<br>PROGRAMS</h2>
+      <p class="s-lead r d2">Real martial arts for real kids. Confidence, discipline, self-defense, and friendships that last a lifetime. Led by Coach Eduardo Brito and our team of dedicated kids instructors.</p>
+      <div class="kids-grid">
+        <div class="kids-card r d1">
+          <span class="kc-age">Ages 4–7</span>
+          <div class="kc-name">LITTLE LIONS</div>
+          <p class="kc-desc">Our foundational program for young children. Kids learn basic striking, movement, balance, and following instructions — all through games and drills designed for small bodies and big imaginations. Classes are safe, fun, and structured.</p>
+          <div class="kc-perks">
+            <span class="kc-perk">Mon / Wed / Sat</span>
+            <span class="kc-perk">Beginner &amp; Advanced Tracks</span>
+            <span class="kc-perk">Belt System</span>
+            <span class="kc-perk">Anti-Bullying Training</span>
+          </div>
+        </div>
+        <div class="kids-card r d2">
+          <span class="kc-age">Ages 7–13</span>
+          <div class="kc-name">YOUNG LIONS</div>
+          <p class="kc-desc">A more rigorous program for older kids ready to take their training seriously. Covers boxing, Muay Thai, BJJ, and wrestling fundamentals. Competition-track kids can advance into our youth fight team under Coach Eduardo Brito.</p>
+          <div class="kc-perks">
+            <span class="kc-perk">Mon / Tue / Wed / Thu / Sat</span>
+            <span class="kc-perk">Beginner &amp; Advanced Tracks</span>
+            <span class="kc-perk">Competition Track</span>
+            <span class="kc-perk">Anti-Bullying Focus</span>
+          </div>
+        </div>
+        <div class="kids-card r d1" style="background:rgba(220,20,20,.06);border-color:rgba(220,20,20,.3);">
+          <span class="kc-age">Mon–Fri · After School</span>
+          <div class="kc-name">AFTER-SCHOOL PICKUP</div>
+          <p class="kc-desc">We'll pick up your kids from school, bring them to the gym for their daily class, help with homework, and have them ready for pick-up. Available at Falls Church, Fairfax, Vienna, and Purcellville. Limited spots — enroll early.</p>
+          <div class="kc-perks">
+            <span class="kc-perk">School Pickup Included</span>
+            <span class="kc-perk">Homework Help</span>
+            <span class="kc-perk">Daily Class</span>
+            <span class="kc-perk">Ages 5–13</span>
+          </div>
+        </div>
+        <div class="kids-card r d2">
+          <span class="kc-age">Ages 4–13 · Summer</span>
+          <div class="kc-name">SUMMER CAMP</div>
+          <p class="kc-desc">A full-day summer program packed with martial arts training, games, field trips, and fun. Available across all locations. One of the most popular kids' programs in Northern Virginia. Spots fill up fast — register early.</p>
+          <div class="kc-perks">
+            <span class="kc-perk">Full-Day Program</span>
+            <span class="kc-perk">All Locations</span>
+            <span class="kc-perk">Field Trips Included</span>
+            <span class="kc-perk">Limited Spots</span>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:44px;" class="r d3">
+        <a href="#cta" class="btn-p">Enroll Your Child Free <span class="arr">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <div class="inner">
+      <div class="s-eye r">Membership</div>
+      <h2 class="s-title r d1">START YOUR<br>JOURNEY</h2>
+      <p class="s-lead r d2" style="margin-bottom:36px;">No contracts. No hidden fees. Try a full week completely free — no card required.</p>
+      <div class="pricing-urgency r d3">
+        <div class="pulse"></div>
+        Limited new member spots available this month at all locations
+      </div>
+      <div class="pricing-grid">
+        <div class="price-card r">
+          <div class="p-plan">Starter</div>
+          <div class="p-price"><span class="p-cur">$</span><span class="p-amt">99</span><span class="p-per">/mo</span></div>
+          <p class="p-desc">Perfect for exploring one discipline.</p>
+          <div class="p-div"></div>
+          <ul class="p-feats">
+            <li>1 Discipline (Your Choice)</li>
+            <li>Unlimited Classes in That Program</li>
+            <li>Locker Room Access</li>
+            <li>Free Intro Session</li>
+            <li class="off">Multi-Location Access</li>
+            <li class="off">Fight Team Access</li>
+          </ul>
+          <a href="#cta" class="btn-s p-btn-full">Get Started</a>
+        </div>
+        <div class="price-card feat r d1">
+          <div class="feat-badge">🔥 Most Popular</div>
+          <div class="p-plan p-plan-feat">Champion</div>
+          <div class="p-price"><span class="p-cur">$</span><span class="p-amt">149</span><span class="p-per">/mo</span></div>
+          <p class="p-desc">Full access to every program at every location.</p>
+          <div class="p-div"></div>
+          <ul class="p-feats">
+            <li>All Disciplines — Unlimited</li>
+            <li>Unlimited Classes, 7 Days/Week</li>
+            <li>All 5 Locations Access</li>
+            <li>Kids Classes Included</li>
+            <li>Free Intro Session</li>
+            <li>10% Off Private Lessons</li>
+          </ul>
+          <a href="#cta" class="btn-p p-btn-full">Claim Free Week <span class="arr">→</span></a>
+          <div class="spots">⚠️ Limited spots remaining this month</div>
+        </div>
+        <div class="price-card r d2">
+          <div class="p-plan">Elite Fighter</div>
+          <div class="p-price"><span class="p-cur">$</span><span class="p-amt">249</span><span class="p-per">/mo</span></div>
+          <p class="p-desc">For serious competitors going pro.</p>
+          <div class="p-div"></div>
+          <ul class="p-feats">
+            <li>Everything in Champion</li>
+            <li>Full Fight Team Access</li>
+            <li>2 Private Lessons / Month</li>
+            <li>Competition Prep Coaching</li>
+            <li>Personalized Training Plan</li>
+            <li>Priority Class Booking</li>
+          </ul>
+          <a href="#cta" class="btn-s p-btn-full">Apply Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="cta">
+    <div class="cta-ghost">KAIZEN</div>
+    <div class="s-eye r">Your Free Trial</div>
+    <h2 class="s-title r d1" style="font-size:clamp(44px,8vw,100px);">YOUR FREE<br><span style="color:var(--red);">WEEK STARTS NOW</span></h2>
+    <p class="s-lead r d2">Don't overthink it. Walk into any of our 5 locations, train free for a full week, and see why hundreds of members call Kaizen home. No card. No commitment. Just show up.</p>
+
+    <div class="lead-form r d3">
+      <span class="form-label">🥊 Claim Your Free Week — No Card Needed</span>
+      <div class="form-fields">
+        <input type="text"  id="f-name"  placeholder="Your Full Name"   autocomplete="name">
+        <input type="email" id="f-email" placeholder="Email Address"    autocomplete="email">
+        <input type="tel"   id="f-phone" placeholder="Phone Number"     autocomplete="tel">
+        <select id="f-loc">
+          <option value="" disabled selected>Preferred Location</option>
+          <option>Falls Church — (703) 734-5425</option>
+          <option>Fairfax — (703) 426-5425</option>
+          <option>Vienna — (703) 281-5425</option>
+          <option>Ashburn — (703) 444-5425</option>
+          <option>Purcellville — (202) 975-5425</option>
+        </select>
+        <select id="f-prog">
+          <option value="" disabled selected>Program of Interest</option>
+          <option>Boxing</option>
+          <option>Muay Thai</option>
+          <option>Brazilian Jiu-Jitsu</option>
+          <option>MMA</option>
+          <option>Wrestling</option>
+          <option>Kids — Little Lions (Ages 4–7)</option>
+          <option>Kids — Young Lions (Ages 7–13)</option>
+          <option>After-School Pickup</option>
+          <option>Summer Camp</option>
+          <option>Not sure yet — show me everything</option>
+        </select>
+        <button class="form-submit" id="form-btn" onclick="handleSubmit()">CLAIM MY FREE WEEK →</button>
+      </div>
+      <p class="form-note">No commitment. No credit card. We'll reach out within 24 hours to confirm your spot.</p>
+    </div>
+
+    <div class="trust-row r d4">
+      <div class="trust-item">No Contract</div>
+      <div class="trust-item">No Credit Card</div>
+      <div class="trust-item">All Levels Welcome</div>
+      <div class="trust-item">5 VA Locations</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#home" class="logo">KAIZEN<em>.</em>MMA</a>
+        <p>Virginia's premier martial arts training facility. Building champions in boxing, Muay Thai, BJJ, MMA, wrestling, and kids programs since 2004.</p>
+        <div class="socials">
+          <a href="https://www.facebook.com/USKaizen" class="soc-btn" target="_blank" rel="noopener" title="Facebook">FB</a>
+          <a href="https://www.instagram.com/kaizen_mma/" class="soc-btn" target="_blank" rel="noopener" title="Instagram">IG</a>
+          <a href="https://www.facebook.com/Kaizenmmakids" class="soc-btn" target="_blank" rel="noopener" title="Kids Facebook">👦</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="#programs">Boxing</a></li>
+          <li><a href="#programs">Muay Thai</a></li>
+          <li><a href="#programs">BJJ</a></li>
+          <li><a href="#programs">MMA</a></li>
+          <li><a href="#programs">Wrestling</a></li>
+          <li><a href="#kids">Kids MMA</a></li>
+          <li><a href="#kids">After-School Pickup</a></li>
+          <li><a href="#kids">Summer Camp</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About Kaizen</a></li>
+          <li><a href="#locations">All Locations</a></li>
+          <li><a href="#coaches">Our Coaches</a></li>
+          <li><a href="#schedule">Class Schedule</a></li>
+          <li><a href="#pricing">Membership</a></li>
+          <li><a href="https://kzmma.com/work-with-us/" target="_blank">Work With Us</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <div class="contact-item"><span class="c-icon">📍</span><span>Falls Church (Flagship)<br>2190-K Pimmit Dr, VA 22043</span></div>
+        <div class="contact-item"><span class="c-icon">📞</span><a href="tel:+17037345425">(703) 734-5425</a></div>
+        <div class="contact-item"><span class="c-icon">✉️</span><span>info@kaizenmma.com</span></div>
+        <div class="contact-item"><span class="c-icon">📘</span><a href="https://www.facebook.com/USKaizen" target="_blank">USKaizen</a></div>
+        <div class="contact-item"><span class="c-icon">📷</span><a href="https://www.instagram.com/kaizen_mma/" target="_blank">@kaizen_mma</a></div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© 2025 Kaizen MMA. All rights reserved. Virginia's most successful martial arts team since 2004.</p>
+      <div class="foot-links">
+        <a href="https://kzmma.com/privacy-policy/" target="_blank">Privacy Policy</a>
+        <a href="https://kzmma.com/terms-of-service/" target="_blank">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    const topbarH = document.querySelector('.topbar').offsetHeight;
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > topbarH);
+    });
+
+    // Mobile menu
+    function toggleMenu() {
+      document.getElementById('mobMenu').classList.toggle('open');
+    }
+    function closeMenu() {
+      document.getElementById('mobMenu').classList.remove('open');
+    }
+
+    // Ticker duplicate
+    const t = document.getElementById('ticker');
+    t.innerHTML += t.innerHTML;
+
+    // Countdown
+    (function() {
+      const end = new Date(Date.now() + 3*86400000 + 14*3600000 + 32*60000);
+      function tick() {
+        const d = Math.max(0, end - Date.now());
+        const p = n => String(n).padStart(2,'0');
+        document.getElementById('cd-d').textContent = p(Math.floor(d/86400000));
+        document.getElementById('cd-h').textContent = p(Math.floor(d%86400000/3600000));
+        document.getElementById('cd-m').textContent = p(Math.floor(d%3600000/60000));
+        document.getElementById('cd-s').textContent = p(Math.floor(d%60000/1000));
+      }
+      tick(); setInterval(tick, 1000);
+    })();
+
+    // Scroll reveal
+    const ro = new IntersectionObserver(es => es.forEach(e => {
+      if(e.isIntersecting) e.target.classList.add('in');
+    }), { threshold: 0.1 });
+    document.querySelectorAll('.r').forEach(el => ro.observe(el));
+
+    // Stat counters
+    const co = new IntersectionObserver(es => {
+      es.forEach(e => {
+        if(!e.isIntersecting || e.target.dataset.done) return;
+        e.target.dataset.done = 1;
+        const target = +e.target.dataset.to;
+        let cur = 0, inc = target / (1600/16);
+        const iv = setInterval(() => {
+          cur = Math.min(cur + inc, target);
+          e.target.textContent = Math.floor(cur) + '+';
+          if(cur >= target) clearInterval(iv);
+        }, 16);
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-to]').forEach(el => co.observe(el));
+
+    // Schedule tabs
+    function switchTab(btn, id) {
+      document.querySelectorAll('.sched-tab').forEach(t => t.classList.remove('on'));
+      btn.classList.add('on');
+      document.getElementById('tab-adults').style.display = id === 'adults' ? 'block' : 'none';
+      document.getElementById('tab-kids').style.display   = id === 'kids'   ? 'block' : 'none';
+    }
+
+    // Form submit
+    function handleSubmit() {
+      const name = document.getElementById('f-name').value.trim();
+      const btn = document.getElementById('form-btn');
+      if(!name) { document.getElementById('f-name').focus(); return; }
+      btn.textContent = '✓ RECEIVED! WE\'LL CALL YOU WITHIN 24 HOURS.';
+      btn.style.background = '#16a34a';
+      btn.style.clipPath = 'none';
+      btn.onclick = null;
+    }
+  </script>
+</body>
+</html>
