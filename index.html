@@ -107,6 +107,18 @@
     .s-title { font-family:var(--display); font-size:clamp(46px,6.5vw,84px); line-height:.92; letter-spacing:1px; margin-bottom:20px; }
     .s-lead { font-size:17px; font-weight:300; color:var(--lgray); max-width:520px; line-height:1.75; }
 
+    /* TESTIMONIALS */
+    .testi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:60px; }
+    .testi-card { background:var(--card); border:1px solid var(--border); padding:40px; position:relative; }
+    .testi-quote { position:absolute; top:16px; right:24px; font-family:var(--display); font-size:88px; line-height:.8; color:rgba(220,20,20,.15); pointer-events:none; }
+    .stars { color:var(--red); font-size:13px; letter-spacing:3px; margin-bottom:16px; }
+    .testi-text { font-size:15px; font-weight:300; color:var(--lgray); line-height:1.75; margin-bottom:28px; font-style:italic; }
+    .testi-author { display:flex; align-items:center; gap:14px; }
+    .t-avatar { width:44px; height:44px; border-radius:50%; background:var(--red); display:flex; align-items:center; justify-content:center; font-family:var(--display); font-size:22px; flex-shrink:0; }
+    .t-name { font-family:var(--cond); font-size:15px; font-weight:700; letter-spacing:1px; text-transform:uppercase; }
+    .t-since { font-size:13px; color:var(--gray); margin-top:3px; }
+
+  
     /* ABOUT */
     .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
     .about-img-wrap { position:relative; }
@@ -165,18 +177,7 @@
     .coach-body { padding:24px; }
     .coach-bio { font-size:14px; font-weight:300; color:var(--gray); line-height:1.7; margin-bottom:16px; }
     .tags { display:flex; flex-wrap:wrap; gap:7px; }
-    .tag { font-family:var(--cond); font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--lgray); background:var(--dark); border:1px solid var(--border); padding:4px 10px; }
-
-    /* TESTIMONIALS */
-    .testi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:60px; }
-    .testi-card { background:var(--card); border:1px solid var(--border); padding:40px; position:relative; }
-    .testi-quote { position:absolute; top:16px; right:24px; font-family:var(--display); font-size:88px; line-height:.8; color:rgba(220,20,20,.15); pointer-events:none; }
-    .stars { color:var(--red); font-size:13px; letter-spacing:3px; margin-bottom:16px; }
-    .testi-text { font-size:15px; font-weight:300; color:var(--lgray); line-height:1.75; margin-bottom:28px; font-style:italic; }
-    .testi-author { display:flex; align-items:center; gap:14px; }
-    .t-avatar { width:44px; height:44px; border-radius:50%; background:var(--red); display:flex; align-items:center; justify-content:center; font-family:var(--display); font-size:22px; flex-shrink:0; }
-    .t-name { font-family:var(--cond); font-size:15px; font-weight:700; letter-spacing:1px; text-transform:uppercase; }
-    .t-since { font-size:13px; color:var(--gray); margin-top:3px; }
+    .tag { font-family:var(--cond); font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--lgray); background:var(--dark); border:1px solid var(--border); padding:4px 10px; }s
 
     /* SCHEDULE */
     .sched-tabs { display:flex; border-bottom:1px solid var(--border); margin-top:48px; }
