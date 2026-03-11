@@ -79,15 +79,12 @@
     .aside-num { font-family:var(--display); font-size:54px; line-height:1; }
     .aside-num em { color:var(--red); font-style:normal; }
     .aside-lbl { font-family:var(--cond); font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--gray); }
+    .hero-logo-img { position:absolute; right:6%; top:50%; transform:translateY(-50%); z-index:10; width:clamp(260px,28vw,440px); }
+    .hero-logo-img img { width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 0 60px rgba(220,20,20,.3)) drop-shadow(0 0 120px rgba(220,20,20,.12)); opacity:.93; animation:logoFloat 6s ease-in-out infinite; }
+    @keyframes logoFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
     .scroll-hint { position:absolute; bottom:28px; left:50%; transform:translateX(-50%); z-index:10; }
     .scroll-line { width:1px; height:56px; background:linear-gradient(to bottom,var(--border),transparent); animation:sline 2s ease-in-out infinite; margin:0 auto; }
     @keyframes sline { 0%{transform:scaleY(0);transform-origin:top} 50%{transform:scaleY(1);transform-origin:top} 51%{transform:scaleY(1);transform-origin:bottom} 100%{transform:scaleY(0);transform-origin:bottom} }
-
-    <!-- HERO LOGO IMAGE -->
-<div class="hero-logo-img">
-  <img src="images/kaizen-logo.png" alt="Kaizen MMA Logo"
-       onerror="this.onerror=null; this.parentElement.innerHTML='<svg viewBox=\'0 0 300 300\' xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\'><circle cx=\'150\' cy=\'150\' r=\'145\' fill=\'none\' stroke=\'%23DC1414\' stroke-width=\'4\' opacity=\'.5\'/><text x=\'150\' y=\'140\' font-family=\'Bebas Neue,sans-serif\' font-size=\'52\' fill=\'%23F8F8F8\' text-anchor=\'middle\' letter-spacing=\'4\'>KAIZEN</text><text x=\'150\' y=\'188\' font-family=\'Bebas Neue,sans-serif\' font-size=\'38\' fill=\'%23DC1414\' text-anchor=\'middle\' letter-spacing=\'8\'>MMA</text></svg>';">
-</div>
 
     /* BUTTONS */
     .btn-p { display:inline-flex; align-items:center; gap:10px; font-family:var(--cond); font-size:15px; font-weight:700; letter-spacing:2px; text-transform:uppercase; background:var(--red); color:var(--white); padding:15px 34px; clip-path:polygon(12px 0,100% 0,calc(100% - 12px) 100%,0 100%); transition:background .2s,transform .2s,box-shadow .2s; border:none; }
@@ -104,60 +101,14 @@
     .ticker-item { display:inline-flex; align-items:center; gap:14px; padding:0 36px; font-family:var(--cond); font-size:14px; font-weight:700; letter-spacing:3.5px; text-transform:uppercase; color:var(--lgray); flex-shrink:0; }
     .t-dot { width:5px; height:5px; border-radius:50%; background:var(--red); flex-shrink:0; }
 
-    <!-- FEATURED IN / PRESS BAR -->
-<div class="press-bar">
-  <div class="press-inner">
-    <div class="press-label">As Featured In</div>
-    <div class="press-logos">
-      <div class="press-logo">
-        <svg width="130" height="38" viewBox="0 0 130 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <text x="1" y="14" font-family="Georgia, serif" font-size="10" font-weight="700" fill="#F8F8F8" letter-spacing="2.5">WASHINGTON</text>
-          <text x="1" y="33" font-family="Georgia, serif" font-size="19" font-weight="900" fill="#F8F8F8" letter-spacing="0.5">Family</text>
-          <text x="88" y="33" font-family="Georgia, serif" font-size="9" fill="#BBBBBB" letter-spacing="1.5">MAG</text>
-        </svg>
-      </div>
-      <div class="press-logo">
-        <svg width="76" height="38" viewBox="0 0 76 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="76" height="38" fill="#DC1414" rx="3"/>
-          <text x="5" y="29" font-family="Arial Black, Impact, sans-serif" font-size="24" font-weight="900" fill="white" letter-spacing="-1">FOX</text>
-          <text x="57" y="30" font-family="Arial Black, Impact, sans-serif" font-size="22" font-weight="900" fill="white">5</text>
-        </svg>
-      </div>
-      <div class="press-logo">
-        <svg width="148" height="38" viewBox="0 0 148 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <text x="0" y="32" font-family="Arial Black, Impact, sans-serif" font-size="34" font-weight="900" fill="#F8F8F8" letter-spacing="-1.5">wtop</text>
-          <text x="97" y="32" font-family="Arial, sans-serif" font-size="15" font-weight="400" fill="#BBBBBB" letter-spacing="1">news</text>
-        </svg>
-      </div>
-      <div class="press-logo">
-        <svg width="158" height="38" viewBox="0 0 158 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <text x="1" y="14" font-family="Georgia, serif" font-size="9" font-weight="700" fill="#BBBBBB" letter-spacing="2">FALLS CHURCH</text>
-          <text x="1" y="33" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#F8F8F8" letter-spacing="0.5" font-style="italic">News-Press</text>
-        </svg>
-      </div>
-      <div class="press-logo">
-        <svg width="110" height="38" viewBox="0 0 110 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="19" cy="19" r="19" fill="#2e7d32"/>
-          <text x="8" y="25" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="white" letter-spacing="-0.5">patch</text>
-          <text x="42" y="25" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#F8F8F8" letter-spacing="0.5">Patch</text>
-        </svg>
-      </div>
-      <div class="press-logo">
-        <svg width="158" height="38" viewBox="0 0 158 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="158" height="38" fill="#C41010" rx="3"/>
-          <text x="8" y="14" font-family="Arial, sans-serif" font-size="8" font-weight="700" fill="rgba(255,255,255,0.75)" letter-spacing="3">FAIRFAX</text>
-          <text x="8" y="30" font-family="Arial Black, Impact, sans-serif" font-size="14" font-weight="900" fill="white" letter-spacing="1.5">CONNECTION</text>
-        </svg>
-      </div>
-      <div class="press-logo">
-        <svg width="128" height="38" viewBox="0 0 128 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <text x="1" y="23" font-family="Georgia, serif" font-size="20" font-style="italic" fill="#F8F8F8" letter-spacing="1.5">Vienna</text>
-          <text x="1" y="35" font-family="Georgia, serif" font-size="9" fill="#BBBBBB" letter-spacing="5.5">LIVING</text>
-        </svg>
-      </div>
-    </div>
-  </div>
-</div>
+    /* PRESS BAR */
+    .press-bar { background:var(--black); border-bottom:1px solid var(--border); padding:44px 5%; }
+    .press-inner { max-width:1280px; margin:0 auto; display:flex; flex-direction:column; align-items:center; gap:32px; }
+    .press-label { font-family:var(--cond); font-size:11px; font-weight:700; letter-spacing:6px; text-transform:uppercase; color:var(--gray); display:flex; align-items:center; gap:18px; }
+    .press-label::before, .press-label::after { content:''; display:block; width:48px; height:1px; background:var(--border); }
+    .press-logos { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:6px; width:100%; }
+    .press-logo { display:inline-flex; align-items:center; justify-content:center; padding:12px 22px; border:1px solid var(--border); background:rgba(255,255,255,.025); transition:border-color .25s,background .25s,opacity .25s; opacity:.6; min-height:58px; min-width:110px; }
+    .press-logo:hover { opacity:1; border-color:rgba(255,255,255,.22); background:rgba(255,255,255,.055); }
 
     /* SECTIONS */
     .section { padding:100px 5%; }
@@ -179,7 +130,6 @@
     .t-name { font-family:var(--cond); font-size:15px; font-weight:700; letter-spacing:1px; text-transform:uppercase; }
     .t-since { font-size:13px; color:var(--gray); margin-top:3px; }
 
-  
     /* ABOUT */
     .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
     .about-img-wrap { position:relative; }
@@ -230,7 +180,6 @@
     .coach-card { background:var(--card); border:1px solid var(--border); overflow:hidden; transition:transform .3s,border-color .3s; }
     .coach-card:hover { transform:translateY(-5px); border-color:rgba(220,20,20,.3); }
     .coach-img { aspect-ratio:3/4; background:var(--dark); position:relative; overflow:hidden; }
-    .coach-img-bg { position:absolute; inset:0; background:linear-gradient(to bottom,transparent 45%,rgba(8,8,8,.97) 100%),repeating-linear-gradient(45deg,transparent,transparent 18px,rgba(255,255,255,.018) 18px,rgba(255,255,255,.018) 19px); }
     .coach-ghost { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-family:var(--display); font-size:110px; color:rgba(255,255,255,.05); pointer-events:none; user-select:none; }
     .coach-overlay { position:absolute; bottom:0; left:0; right:0; padding:28px 24px; z-index:2; }
     .coach-spec { font-family:var(--cond); font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--red); margin-bottom:5px; }
@@ -238,7 +187,7 @@
     .coach-body { padding:24px; }
     .coach-bio { font-size:14px; font-weight:300; color:var(--gray); line-height:1.7; margin-bottom:16px; }
     .tags { display:flex; flex-wrap:wrap; gap:7px; }
-    .tag { font-family:var(--cond); font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--lgray); background:var(--dark); border:1px solid var(--border); padding:4px 10px; }s
+    .tag { font-family:var(--cond); font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--lgray); background:var(--dark); border:1px solid var(--border); padding:4px 10px; }
 
     /* SCHEDULE */
     .sched-tabs { display:flex; border-bottom:1px solid var(--border); margin-top:48px; }
@@ -256,31 +205,6 @@
     .adv { background:rgba(220,20,20,.12); color:var(--red); }
     .all { background:rgba(255,255,255,.07); color:var(--gray); }
     .wom { background:rgba(168,85,247,.12); color:#a855f7; }
-
-    /* PRICING */
-    .pricing-urgency { display:inline-flex; align-items:center; gap:10px; background:rgba(220,20,20,.09); border:1px solid rgba(220,20,20,.28); padding:10px 20px; margin-bottom:48px; font-family:var(--cond); font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--red); }
-    .pulse { width:8px; height:8px; border-radius:50%; background:var(--red); animation:pulseA 2s ease-in-out infinite; flex-shrink:0; }
-    @keyframes pulseA { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.6);opacity:.45} }
-    .pricing-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; max-width:1040px; }
-    .price-card { background:var(--card); border:1px solid var(--border); padding:48px 40px; position:relative; overflow:hidden; transition:border-color .3s; }
-    .price-card.feat { background:var(--dark); border-color:var(--red); }
-    .price-card:not(.feat):hover { border-color:rgba(220,20,20,.35); }
-    .feat-badge { position:absolute; top:0; left:50%; transform:translateX(-50%); background:var(--red); font-family:var(--cond); font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--white); padding:5px 20px; white-space:nowrap; }
-    .p-plan { font-family:var(--cond); font-size:12px; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--gray); margin-bottom:16px; }
-    .p-plan-feat { margin-top:18px; }
-    .p-price { display:flex; align-items:flex-start; gap:3px; margin-bottom:6px; }
-    .p-cur { font-family:var(--cond); font-size:22px; font-weight:700; color:var(--lgray); margin-top:10px; }
-    .p-amt { font-family:var(--display); font-size:84px; line-height:1; }
-    .p-per { font-size:14px; color:var(--gray); align-self:flex-end; margin-bottom:10px; }
-    .p-desc { font-size:14px; color:var(--gray); line-height:1.5; margin-bottom:8px; }
-    .p-div { height:1px; background:var(--border); margin:22px 0; }
-    .p-feats { list-style:none; margin-bottom:30px; }
-    .p-feats li { display:flex; align-items:flex-start; gap:10px; font-size:14px; color:var(--lgray); padding:9px 0; border-bottom:1px solid rgba(255,255,255,.04); line-height:1.4; }
-    .p-feats li::before { content:'→'; color:var(--red); font-size:13px; flex-shrink:0; margin-top:1px; }
-    .p-feats li.off { color:var(--border); }
-    .p-feats li.off::before { content:'—'; color:var(--border); }
-    .spots { display:flex; align-items:center; gap:6px; font-family:var(--cond); font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#f59e0b; margin-top:14px; }
-    .p-btn-full { width:100%; display:flex; align-items:center; justify-content:center; text-align:center; }
 
     /* KIDS SECTION */
     .kids-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; margin-top:56px; }
@@ -357,7 +281,6 @@
       .loc-grid { grid-template-columns:repeat(2,1fr); }
       .foot-grid { grid-template-columns:1fr 1fr; }
       .hero-aside { display:none; }
-      .pricing-grid { grid-template-columns:1fr; max-width:420px; }
     }
     @media (max-width:768px) {
       .section { padding:64px 5%; }
@@ -372,17 +295,6 @@
       .sched-grid { grid-template-columns:repeat(3,1fr); }
       .stats-inner { grid-template-columns:1fr; }
     }
-    .hero-logo-img { position:absolute; right:6%; top:50%; transform:translateY(-50%); z-index:10; width:clamp(260px,28vw,440px); }
-.hero-logo-img img { width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 0 60px rgba(220,20,20,.3)) drop-shadow(0 0 120px rgba(220,20,20,.12)); opacity:.93; animation:logoFloat 6s ease-in-out infinite; }
-@keyframes logoFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
-
-.press-bar { background:var(--black); border-bottom:1px solid var(--border); padding:44px 5%; }
-.press-inner { max-width:1280px; margin:0 auto; display:flex; flex-direction:column; align-items:center; gap:32px; }
-.press-label { font-family:var(--cond); font-size:11px; font-weight:700; letter-spacing:6px; text-transform:uppercase; color:var(--gray); display:flex; align-items:center; gap:18px; }
-.press-label::before, .press-label::after { content:''; display:block; width:48px; height:1px; background:var(--border); }
-.press-logos { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:6px; width:100%; }
-.press-logo { display:inline-flex; align-items:center; justify-content:center; padding:12px 22px; border:1px solid var(--border); background:rgba(255,255,255,.025); transition:border-color .25s,background .25s,opacity .25s; opacity:.6; min-height:58px; min-width:110px; }
-.press-logo:hover { opacity:1; border-color:rgba(255,255,255,.22); background:rgba(255,255,255,.055); }
   </style>
 </head>
 <body>
@@ -456,6 +368,11 @@
       <div class="aside-stat"><div class="aside-num">25<em>+</em></div><div class="aside-lbl">Years Training</div></div>
       <div class="aside-stat"><div class="aside-num">5</div><div class="aside-lbl">VA Locations</div></div>
     </div>
+    <!-- HERO LOGO IMAGE -->
+    <div class="hero-logo-img">
+      <img src="images/kaizen-logo.png" alt="Kaizen MMA Logo"
+           onerror="this.onerror=null;this.parentElement.innerHTML='<svg viewBox=\'0 0 300 300\' xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\'><circle cx=\'150\' cy=\'150\' r=\'145\' fill=\'none\' stroke=\'%23DC1414\' stroke-width=\'4\' opacity=\'.5\'/><text x=\'150\' y=\'140\' font-family=\'Bebas Neue,sans-serif\' font-size=\'52\' fill=\'%23F8F8F8\' text-anchor=\'middle\' letter-spacing=\'4\'>KAIZEN</text><text x=\'150\' y=\'188\' font-family=\'Bebas Neue,sans-serif\' font-size=\'38\' fill=\'%23DC1414\' text-anchor=\'middle\' letter-spacing=\'8\'>MMA</text></svg>';">
+    </div>
     <div class="scroll-hint"><div class="scroll-line"></div></div>
   </section>
 
@@ -474,6 +391,61 @@
       <div class="ticker-item"><span class="t-dot"></span>Fight Team</div>
       <div class="ticker-item"><span class="t-dot"></span>Summer Camp</div>
       <div class="ticker-item"><span class="t-dot"></span>Private Lessons</div>
+    </div>
+  </div>
+
+  <!-- FEATURED IN / PRESS BAR -->
+  <div class="press-bar">
+    <div class="press-inner">
+      <div class="press-label">As Featured In</div>
+      <div class="press-logos">
+        <div class="press-logo">
+          <svg width="130" height="38" viewBox="0 0 130 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <text x="1" y="14" font-family="Georgia, serif" font-size="10" font-weight="700" fill="#F8F8F8" letter-spacing="2.5">WASHINGTON</text>
+            <text x="1" y="33" font-family="Georgia, serif" font-size="19" font-weight="900" fill="#F8F8F8" letter-spacing="0.5">Family</text>
+            <text x="88" y="33" font-family="Georgia, serif" font-size="9" fill="#BBBBBB" letter-spacing="1.5">MAG</text>
+          </svg>
+        </div>
+        <div class="press-logo">
+          <svg width="76" height="38" viewBox="0 0 76 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="76" height="38" fill="#DC1414" rx="3"/>
+            <text x="5" y="29" font-family="Arial Black, Impact, sans-serif" font-size="24" font-weight="900" fill="white" letter-spacing="-1">FOX</text>
+            <text x="57" y="30" font-family="Arial Black, Impact, sans-serif" font-size="22" font-weight="900" fill="white">5</text>
+          </svg>
+        </div>
+        <div class="press-logo">
+          <svg width="148" height="38" viewBox="0 0 148 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="32" font-family="Arial Black, Impact, sans-serif" font-size="34" font-weight="900" fill="#F8F8F8" letter-spacing="-1.5">wtop</text>
+            <text x="97" y="32" font-family="Arial, sans-serif" font-size="15" font-weight="400" fill="#BBBBBB" letter-spacing="1">news</text>
+          </svg>
+        </div>
+        <div class="press-logo">
+          <svg width="158" height="38" viewBox="0 0 158 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <text x="1" y="14" font-family="Georgia, serif" font-size="9" font-weight="700" fill="#BBBBBB" letter-spacing="2">FALLS CHURCH</text>
+            <text x="1" y="33" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#F8F8F8" letter-spacing="0.5" font-style="italic">News-Press</text>
+          </svg>
+        </div>
+        <div class="press-logo">
+          <svg width="110" height="38" viewBox="0 0 110 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="19" cy="19" r="19" fill="#2e7d32"/>
+            <text x="8" y="25" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="white" letter-spacing="-0.5">patch</text>
+            <text x="42" y="25" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#F8F8F8" letter-spacing="0.5">Patch</text>
+          </svg>
+        </div>
+        <div class="press-logo">
+          <svg width="158" height="38" viewBox="0 0 158 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="158" height="38" fill="#C41010" rx="3"/>
+            <text x="8" y="14" font-family="Arial, sans-serif" font-size="8" font-weight="700" fill="rgba(255,255,255,0.75)" letter-spacing="3">FAIRFAX</text>
+            <text x="8" y="30" font-family="Arial Black, Impact, sans-serif" font-size="14" font-weight="900" fill="white" letter-spacing="1.5">CONNECTION</text>
+          </svg>
+        </div>
+        <div class="press-logo">
+          <svg width="128" height="38" viewBox="0 0 128 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <text x="1" y="23" font-family="Georgia, serif" font-size="20" font-style="italic" fill="#F8F8F8" letter-spacing="1.5">Vienna</text>
+            <text x="1" y="35" font-family="Georgia, serif" font-size="9" fill="#BBBBBB" letter-spacing="5.5">LIVING</text>
+          </svg>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -732,10 +704,7 @@
           <p class="testi-text">"I've been training at Kaizen MMA for 8 years since I was a teenager. I went from an amateur to a professional fighter with 22 MMA fights. They are the premium mixed martial arts gym out of the DMV."</p>
           <div class="testi-author">
             <div class="t-avatar">S</div>
-            <div>
-              <div class="t-name">Sam K.</div>
-              <div class="t-since">Member since 2016 · 22 Pro MMA Fights · FURY FC Champion</div>
-            </div>
+            <div><div class="t-name">Sam K.</div><div class="t-since">Member since 2016 · 22 Pro MMA Fights · FURY FC Champion</div></div>
           </div>
         </div>
         <div class="testi-card r d1">
@@ -744,10 +713,7 @@
           <p class="testi-text">"If you're a girl or anyone looking for a welcoming environment with fantastic coaches who will take time to work with you — this is the place. Kaizen has become a second home to me and my girlfriends. This place has truly changed my life."</p>
           <div class="testi-author">
             <div class="t-avatar">L</div>
-            <div>
-              <div class="t-name">Lauren B.</div>
-              <div class="t-since">Member since 2023 · Muay Thai &amp; MMA</div>
-            </div>
+            <div><div class="t-name">Lauren B.</div><div class="t-since">Member since 2023 · Muay Thai &amp; MMA</div></div>
           </div>
         </div>
         <div class="testi-card r d2">
@@ -756,10 +722,7 @@
           <p class="testi-text">"Kaizen MMA at Falls Church has by far been one of the best gyms I've trained at. It's a big spacious facility and the instructors go way above the call of duty. You'll go from a dull butter knife to a full-fledged katana in a short time."</p>
           <div class="testi-author">
             <div class="t-avatar">T</div>
-            <div>
-              <div class="t-name">Tomas H.</div>
-              <div class="t-since">Member · MMA &amp; BJJ</div>
-            </div>
+            <div><div class="t-name">Tomas H.</div><div class="t-since">Member · MMA &amp; BJJ</div></div>
           </div>
         </div>
         <div class="testi-card r">
@@ -768,10 +731,7 @@
           <p class="testi-text">"The best MMA and boxing gym in the DMV. I have been in this gym for more than 2 years and I have improved more than I thought. A gym for any level — pro and amateur alike."</p>
           <div class="testi-author">
             <div class="t-avatar">S</div>
-            <div>
-              <div class="t-name">Sport King</div>
-              <div class="t-since">Member · Falls Church</div>
-            </div>
+            <div><div class="t-name">Sport King</div><div class="t-since">Member · Falls Church</div></div>
           </div>
         </div>
         <div class="testi-card r d1">
@@ -780,10 +740,7 @@
           <p class="testi-text">"Highly recommend Kaizen MMA. The instructors are extremely professional and experienced, and they truly care about their students. Safety is clearly a top priority, especially for kids — gives parents great peace of mind."</p>
           <div class="testi-author">
             <div class="t-avatar">A</div>
-            <div>
-              <div class="t-name">Allen A.</div>
-              <div class="t-since">Parent · Kids Program</div>
-            </div>
+            <div><div class="t-name">Allen A.</div><div class="t-since">Parent · Kids Program</div></div>
           </div>
         </div>
         <div class="testi-card r d2">
@@ -792,10 +749,7 @@
           <p class="testi-text">"Nothing but positive energy at Kaizen MMA. Everyone is welcoming and kind. Training is top-notch across MMA, Boxing, Wrestling, BJJ, Muay Thai, and Kickboxing. I'm glad my son is part of it."</p>
           <div class="testi-author">
             <div class="t-avatar">A</div>
-            <div>
-              <div class="t-name">A.G.</div>
-              <div class="t-since">Parent · Kids &amp; Adults Programs</div>
-            </div>
+            <div><div class="t-name">A.G.</div><div class="t-since">Parent · Kids &amp; Adults Programs</div></div>
           </div>
         </div>
       </div>
@@ -812,7 +766,6 @@
         <button class="sched-tab on" onclick="switchTab(this,'adults')">Adults</button>
         <button class="sched-tab"    onclick="switchTab(this,'kids')">Kids</button>
       </div>
-
       <div id="tab-adults">
         <div class="sched-grid">
           <div class="sched-head">MON</div><div class="sched-head">TUE</div><div class="sched-head">WED</div><div class="sched-head">THU</div><div class="sched-head">FRI</div><div class="sched-head">SAT</div><div class="sched-head">SUN</div>
@@ -853,7 +806,6 @@
           </div>
         </div>
       </div>
-
       <div id="tab-kids" style="display:none">
         <div class="sched-grid">
           <div class="sched-head">MON</div><div class="sched-head">TUE</div><div class="sched-head">WED</div><div class="sched-head">THU</div><div class="sched-head">FRI</div><div class="sched-head">SAT</div><div class="sched-head">SUN</div>
@@ -907,7 +859,7 @@
         <div class="kids-card r d1">
           <span class="kc-age">Ages 4–7</span>
           <div class="kc-name">LITTLE LIONS</div>
-          <p class="kc-desc">Our foundational program for young children. Kids learn basic striking, movement, balance, and following instructions — all through games and drills designed for small bodies and big imaginations. Classes are safe, fun, and structured.</p>
+          <p class="kc-desc">Our foundational program for young children. Kids learn basic striking, movement, balance, and following instructions — all through games and drills designed for small bodies and big imaginations.</p>
           <div class="kc-perks">
             <span class="kc-perk">Mon / Wed / Sat</span>
             <span class="kc-perk">Beginner &amp; Advanced Tracks</span>
@@ -918,7 +870,7 @@
         <div class="kids-card r d2">
           <span class="kc-age">Ages 7–13</span>
           <div class="kc-name">YOUNG LIONS</div>
-          <p class="kc-desc">A more rigorous program for older kids ready to take their training seriously. Covers boxing, Muay Thai, BJJ, and wrestling fundamentals. Competition-track kids can advance into our youth fight team under Coach Eduardo Brito.</p>
+          <p class="kc-desc">A more rigorous program for older kids ready to take their training seriously. Covers boxing, Muay Thai, BJJ, and wrestling fundamentals. Competition-track kids can advance into our youth fight team.</p>
           <div class="kc-perks">
             <span class="kc-perk">Mon / Tue / Wed / Thu / Sat</span>
             <span class="kc-perk">Beginner &amp; Advanced Tracks</span>
@@ -929,7 +881,7 @@
         <div class="kids-card r d1" style="background:rgba(220,20,20,.06);border-color:rgba(220,20,20,.3);">
           <span class="kc-age">Mon–Fri · After School</span>
           <div class="kc-name">AFTER-SCHOOL PICKUP</div>
-          <p class="kc-desc">We'll pick up your kids from school, bring them to the gym for their daily class, help with homework, and have them ready for pick-up. Available at Falls Church, Fairfax, Vienna, and Purcellville. Limited spots — enroll early.</p>
+          <p class="kc-desc">We'll pick up your kids from school, bring them to the gym for their daily class, help with homework, and have them ready for pick-up. Available at Falls Church, Fairfax, Vienna, and Purcellville.</p>
           <div class="kc-perks">
             <span class="kc-perk">School Pickup Included</span>
             <span class="kc-perk">Homework Help</span>
@@ -940,7 +892,7 @@
         <div class="kids-card r d2">
           <span class="kc-age">Ages 4–13 · Summer</span>
           <div class="kc-name">SUMMER CAMP</div>
-          <p class="kc-desc">A full-day summer program packed with martial arts training, games, field trips, and fun. Available across all locations. One of the most popular kids' programs in Northern Virginia. Spots fill up fast — register early.</p>
+          <p class="kc-desc">A full-day summer program packed with martial arts training, games, field trips, and fun. Available across all locations. One of the most popular kids' programs in Northern Virginia. Spots fill up fast.</p>
           <div class="kc-perks">
             <span class="kc-perk">Full-Day Program</span>
             <span class="kc-perk">All Locations</span>
@@ -955,75 +907,12 @@
     </div>
   </section>
 
-  <!-- PRICING -->
-  <section class="section" id="pricing">
-    <div class="inner">
-      <div class="s-eye r">Membership</div>
-      <h2 class="s-title r d1">START YOUR<br>JOURNEY</h2>
-      <p class="s-lead r d2" style="margin-bottom:36px;">No contracts. No hidden fees. Try a full week completely free — no card required.</p>
-      <div class="pricing-urgency r d3">
-        <div class="pulse"></div>
-        Limited new member spots available this month at all locations
-      </div>
-      <div class="pricing-grid">
-        <div class="price-card r">
-          <div class="p-plan">Starter</div>
-          <div class="p-price"><span class="p-cur">$</span><span class="p-amt">99</span><span class="p-per">/mo</span></div>
-          <p class="p-desc">Perfect for exploring one discipline.</p>
-          <div class="p-div"></div>
-          <ul class="p-feats">
-            <li>1 Discipline (Your Choice)</li>
-            <li>Unlimited Classes in That Program</li>
-            <li>Locker Room Access</li>
-            <li>Free Intro Session</li>
-            <li class="off">Multi-Location Access</li>
-            <li class="off">Fight Team Access</li>
-          </ul>
-          <a href="#cta" class="btn-s p-btn-full">Get Started</a>
-        </div>
-        <div class="price-card feat r d1">
-          <div class="feat-badge">🔥 Most Popular</div>
-          <div class="p-plan p-plan-feat">Champion</div>
-          <div class="p-price"><span class="p-cur">$</span><span class="p-amt">149</span><span class="p-per">/mo</span></div>
-          <p class="p-desc">Full access to every program at every location.</p>
-          <div class="p-div"></div>
-          <ul class="p-feats">
-            <li>All Disciplines — Unlimited</li>
-            <li>Unlimited Classes, 7 Days/Week</li>
-            <li>All 5 Locations Access</li>
-            <li>Kids Classes Included</li>
-            <li>Free Intro Session</li>
-            <li>10% Off Private Lessons</li>
-          </ul>
-          <a href="#cta" class="btn-p p-btn-full">Claim Free Week <span class="arr">→</span></a>
-          <div class="spots">⚠️ Limited spots remaining this month</div>
-        </div>
-        <div class="price-card r d2">
-          <div class="p-plan">Elite Fighter</div>
-          <div class="p-price"><span class="p-cur">$</span><span class="p-amt">249</span><span class="p-per">/mo</span></div>
-          <p class="p-desc">For serious competitors going pro.</p>
-          <div class="p-div"></div>
-          <ul class="p-feats">
-            <li>Everything in Champion</li>
-            <li>Full Fight Team Access</li>
-            <li>2 Private Lessons / Month</li>
-            <li>Competition Prep Coaching</li>
-            <li>Personalized Training Plan</li>
-            <li>Priority Class Booking</li>
-          </ul>
-          <a href="#cta" class="btn-s p-btn-full">Apply Now</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- CTA -->
   <section class="cta-section" id="cta">
     <div class="cta-ghost">KAIZEN</div>
     <div class="s-eye r">Your Free Trial</div>
     <h2 class="s-title r d1" style="font-size:clamp(44px,8vw,100px);">YOUR FREE<br><span style="color:var(--red);">WEEK STARTS NOW</span></h2>
     <p class="s-lead r d2">Don't overthink it. Walk into any of our 5 locations, train free for a full week, and see why hundreds of members call Kaizen home. No card. No commitment. Just show up.</p>
-
     <div class="lead-form r d3">
       <span class="form-label">🥊 Claim Your Free Week — No Card Needed</span>
       <div class="form-fields">
@@ -1055,7 +944,6 @@
       </div>
       <p class="form-note">No commitment. No credit card. We'll reach out within 24 hours to confirm your spot.</p>
     </div>
-
     <div class="trust-row r d4">
       <div class="trust-item">No Contract</div>
       <div class="trust-item">No Credit Card</div>
@@ -1071,9 +959,9 @@
         <a href="#home" class="logo">KAIZEN<em>.</em>MMA</a>
         <p>Virginia's premier martial arts training facility. Building champions in boxing, Muay Thai, BJJ, MMA, wrestling, and kids programs since 2004.</p>
         <div class="socials">
-          <a href="https://www.facebook.com/USKaizen" class="soc-btn" target="_blank" rel="noopener" title="Facebook">FB</a>
-          <a href="https://www.instagram.com/kaizen_mma/" class="soc-btn" target="_blank" rel="noopener" title="Instagram">IG</a>
-          <a href="https://www.facebook.com/Kaizenmmakids" class="soc-btn" target="_blank" rel="noopener" title="Kids Facebook">👦</a>
+          <a href="https://www.facebook.com/USKaizen" class="soc-btn" target="_blank" rel="noopener">FB</a>
+          <a href="https://www.instagram.com/kaizen_mma/" class="soc-btn" target="_blank" rel="noopener">IG</a>
+          <a href="https://www.facebook.com/Kaizenmmakids" class="soc-btn" target="_blank" rel="noopener">👦</a>
         </div>
       </div>
       <div class="foot-col">
@@ -1096,7 +984,6 @@
           <li><a href="#locations">All Locations</a></li>
           <li><a href="#coaches">Our Coaches</a></li>
           <li><a href="#schedule">Class Schedule</a></li>
-          <li><a href="#pricing">Membership</a></li>
           <li><a href="https://kzmma.com/work-with-us/" target="_blank">Work With Us</a></li>
         </ul>
       </div>
@@ -1119,26 +1006,15 @@
   </footer>
 
   <script>
-    // Nav scroll
     const nav = document.getElementById('nav');
     const topbarH = document.querySelector('.topbar').offsetHeight;
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > topbarH);
     });
-
-    // Mobile menu
-    function toggleMenu() {
-      document.getElementById('mobMenu').classList.toggle('open');
-    }
-    function closeMenu() {
-      document.getElementById('mobMenu').classList.remove('open');
-    }
-
-    // Ticker duplicate
+    function toggleMenu() { document.getElementById('mobMenu').classList.toggle('open'); }
+    function closeMenu() { document.getElementById('mobMenu').classList.remove('open'); }
     const t = document.getElementById('ticker');
     t.innerHTML += t.innerHTML;
-
-    // Countdown
     (function() {
       const end = new Date(Date.now() + 3*86400000 + 14*3600000 + 32*60000);
       function tick() {
@@ -1151,14 +1027,10 @@
       }
       tick(); setInterval(tick, 1000);
     })();
-
-    // Scroll reveal
     const ro = new IntersectionObserver(es => es.forEach(e => {
       if(e.isIntersecting) e.target.classList.add('in');
     }), { threshold: 0.1 });
     document.querySelectorAll('.r').forEach(el => ro.observe(el));
-
-    // Stat counters
     const co = new IntersectionObserver(es => {
       es.forEach(e => {
         if(!e.isIntersecting || e.target.dataset.done) return;
@@ -1173,16 +1045,12 @@
       });
     }, { threshold: 0.5 });
     document.querySelectorAll('[data-to]').forEach(el => co.observe(el));
-
-    // Schedule tabs
     function switchTab(btn, id) {
       document.querySelectorAll('.sched-tab').forEach(t => t.classList.remove('on'));
       btn.classList.add('on');
       document.getElementById('tab-adults').style.display = id === 'adults' ? 'block' : 'none';
       document.getElementById('tab-kids').style.display   = id === 'kids'   ? 'block' : 'none';
     }
-
-    // Form submit
     function handleSubmit() {
       const name = document.getElementById('f-name').value.trim();
       const btn = document.getElementById('form-btn');
