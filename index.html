@@ -40,7 +40,7 @@
     /* NAV */
     nav { position:fixed; top:37px; left:0; right:0; z-index:1000; height:70px; display:flex; align-items:center; justify-content:space-between; padding:0 5%; transition:background .3s,backdrop-filter .3s,border-color .3s,top .3s; border-bottom:1px solid transparent; }
     nav.scrolled { top:0; background:rgba(8,8,8,.94); backdrop-filter:blur(20px); border-bottom-color:var(--border); }
-    .logo { font-family:var(--display); font-size:26px; letter-spacing:4px; color:var(--white); }
+    .logo { font-family:var(--display); font-size:36px; letter-spacing:4px; color:var(--white); }
     .logo em { color:var(--red); font-style:normal; }
     .nav-links { display:flex; align-items:center; gap:28px; list-style:none; }
     .nav-links a { font-family:var(--cond); font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--lgray); transition:color .2s; }
@@ -83,6 +83,12 @@
     .scroll-line { width:1px; height:56px; background:linear-gradient(to bottom,var(--border),transparent); animation:sline 2s ease-in-out infinite; margin:0 auto; }
     @keyframes sline { 0%{transform:scaleY(0);transform-origin:top} 50%{transform:scaleY(1);transform-origin:top} 51%{transform:scaleY(1);transform-origin:bottom} 100%{transform:scaleY(0);transform-origin:bottom} }
 
+    <!-- HERO LOGO IMAGE -->
+<div class="hero-logo-img">
+  <img src="images/kaizen-logo.png" alt="Kaizen MMA Logo"
+       onerror="this.onerror=null; this.parentElement.innerHTML='<svg viewBox=\'0 0 300 300\' xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\'><circle cx=\'150\' cy=\'150\' r=\'145\' fill=\'none\' stroke=\'%23DC1414\' stroke-width=\'4\' opacity=\'.5\'/><text x=\'150\' y=\'140\' font-family=\'Bebas Neue,sans-serif\' font-size=\'52\' fill=\'%23F8F8F8\' text-anchor=\'middle\' letter-spacing=\'4\'>KAIZEN</text><text x=\'150\' y=\'188\' font-family=\'Bebas Neue,sans-serif\' font-size=\'38\' fill=\'%23DC1414\' text-anchor=\'middle\' letter-spacing=\'8\'>MMA</text></svg>';">
+</div>
+
     /* BUTTONS */
     .btn-p { display:inline-flex; align-items:center; gap:10px; font-family:var(--cond); font-size:15px; font-weight:700; letter-spacing:2px; text-transform:uppercase; background:var(--red); color:var(--white); padding:15px 34px; clip-path:polygon(12px 0,100% 0,calc(100% - 12px) 100%,0 100%); transition:background .2s,transform .2s,box-shadow .2s; border:none; }
     .btn-p:hover { background:var(--red-l); transform:translateY(-2px); box-shadow:0 14px 40px rgba(220,20,20,.3); }
@@ -97,6 +103,61 @@
     @keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
     .ticker-item { display:inline-flex; align-items:center; gap:14px; padding:0 36px; font-family:var(--cond); font-size:14px; font-weight:700; letter-spacing:3.5px; text-transform:uppercase; color:var(--lgray); flex-shrink:0; }
     .t-dot { width:5px; height:5px; border-radius:50%; background:var(--red); flex-shrink:0; }
+
+    <!-- FEATURED IN / PRESS BAR -->
+<div class="press-bar">
+  <div class="press-inner">
+    <div class="press-label">As Featured In</div>
+    <div class="press-logos">
+      <div class="press-logo">
+        <svg width="130" height="38" viewBox="0 0 130 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="1" y="14" font-family="Georgia, serif" font-size="10" font-weight="700" fill="#F8F8F8" letter-spacing="2.5">WASHINGTON</text>
+          <text x="1" y="33" font-family="Georgia, serif" font-size="19" font-weight="900" fill="#F8F8F8" letter-spacing="0.5">Family</text>
+          <text x="88" y="33" font-family="Georgia, serif" font-size="9" fill="#BBBBBB" letter-spacing="1.5">MAG</text>
+        </svg>
+      </div>
+      <div class="press-logo">
+        <svg width="76" height="38" viewBox="0 0 76 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="76" height="38" fill="#DC1414" rx="3"/>
+          <text x="5" y="29" font-family="Arial Black, Impact, sans-serif" font-size="24" font-weight="900" fill="white" letter-spacing="-1">FOX</text>
+          <text x="57" y="30" font-family="Arial Black, Impact, sans-serif" font-size="22" font-weight="900" fill="white">5</text>
+        </svg>
+      </div>
+      <div class="press-logo">
+        <svg width="148" height="38" viewBox="0 0 148 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="32" font-family="Arial Black, Impact, sans-serif" font-size="34" font-weight="900" fill="#F8F8F8" letter-spacing="-1.5">wtop</text>
+          <text x="97" y="32" font-family="Arial, sans-serif" font-size="15" font-weight="400" fill="#BBBBBB" letter-spacing="1">news</text>
+        </svg>
+      </div>
+      <div class="press-logo">
+        <svg width="158" height="38" viewBox="0 0 158 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="1" y="14" font-family="Georgia, serif" font-size="9" font-weight="700" fill="#BBBBBB" letter-spacing="2">FALLS CHURCH</text>
+          <text x="1" y="33" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#F8F8F8" letter-spacing="0.5" font-style="italic">News-Press</text>
+        </svg>
+      </div>
+      <div class="press-logo">
+        <svg width="110" height="38" viewBox="0 0 110 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="19" cy="19" r="19" fill="#2e7d32"/>
+          <text x="8" y="25" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="white" letter-spacing="-0.5">patch</text>
+          <text x="42" y="25" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#F8F8F8" letter-spacing="0.5">Patch</text>
+        </svg>
+      </div>
+      <div class="press-logo">
+        <svg width="158" height="38" viewBox="0 0 158 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="158" height="38" fill="#C41010" rx="3"/>
+          <text x="8" y="14" font-family="Arial, sans-serif" font-size="8" font-weight="700" fill="rgba(255,255,255,0.75)" letter-spacing="3">FAIRFAX</text>
+          <text x="8" y="30" font-family="Arial Black, Impact, sans-serif" font-size="14" font-weight="900" fill="white" letter-spacing="1.5">CONNECTION</text>
+        </svg>
+      </div>
+      <div class="press-logo">
+        <svg width="128" height="38" viewBox="0 0 128 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="1" y="23" font-family="Georgia, serif" font-size="20" font-style="italic" fill="#F8F8F8" letter-spacing="1.5">Vienna</text>
+          <text x="1" y="35" font-family="Georgia, serif" font-size="9" fill="#BBBBBB" letter-spacing="5.5">LIVING</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
 
     /* SECTIONS */
     .section { padding:100px 5%; }
@@ -288,6 +349,7 @@
     @media (max-width:1100px) {
       .about-grid { grid-template-columns:1fr; gap:48px; }
       .about-img { aspect-ratio:16/9; }
+      .hero-logo-img { display:none; }
       .prog-grid { grid-template-columns:repeat(2,1fr); }
       .coaches-grid { grid-template-columns:repeat(2,1fr); }
       .testi-grid { grid-template-columns:1fr 1fr; }
@@ -310,6 +372,17 @@
       .sched-grid { grid-template-columns:repeat(3,1fr); }
       .stats-inner { grid-template-columns:1fr; }
     }
+    .hero-logo-img { position:absolute; right:6%; top:50%; transform:translateY(-50%); z-index:10; width:clamp(260px,28vw,440px); }
+.hero-logo-img img { width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 0 60px rgba(220,20,20,.3)) drop-shadow(0 0 120px rgba(220,20,20,.12)); opacity:.93; animation:logoFloat 6s ease-in-out infinite; }
+@keyframes logoFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
+
+.press-bar { background:var(--black); border-bottom:1px solid var(--border); padding:44px 5%; }
+.press-inner { max-width:1280px; margin:0 auto; display:flex; flex-direction:column; align-items:center; gap:32px; }
+.press-label { font-family:var(--cond); font-size:11px; font-weight:700; letter-spacing:6px; text-transform:uppercase; color:var(--gray); display:flex; align-items:center; gap:18px; }
+.press-label::before, .press-label::after { content:''; display:block; width:48px; height:1px; background:var(--border); }
+.press-logos { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:6px; width:100%; }
+.press-logo { display:inline-flex; align-items:center; justify-content:center; padding:12px 22px; border:1px solid var(--border); background:rgba(255,255,255,.025); transition:border-color .25s,background .25s,opacity .25s; opacity:.6; min-height:58px; min-width:110px; }
+.press-logo:hover { opacity:1; border-color:rgba(255,255,255,.22); background:rgba(255,255,255,.055); }
   </style>
 </head>
 <body>
